@@ -8,11 +8,13 @@ const MainContainer = styled.div`
   text-align: center;
   font-family: "Libre Caslon Display", serif;
   background: #fca311;
+  padding-top: 100px;
 `;
 const Title = styled.h1`
   text-align: center;
+  margin-top: 0px;
   color: white;
-  font-size: 100px;
+  font-size: 70px;
   ${phoneOnly(`
     font-size: 40px;
    `)}
@@ -23,7 +25,6 @@ const AppHeader = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 `;
 
 const MainImage = styled.img`
@@ -37,8 +38,8 @@ const MainImage = styled.img`
 function App() {
   return (
     <MainContainer>
+      <Title>Colin Dowda </Title>
       <AppHeader>
-        <Title>Colin Dowda </Title>
         <MainImage src={ColImg} alt="logo" />
       </AppHeader>
     </MainContainer>
