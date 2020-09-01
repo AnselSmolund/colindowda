@@ -6,18 +6,23 @@ import { phoneOnly } from "./util/breakpoints";
 
 const MainContainer = styled.div`
   text-align: center;
-  font-family: "Libre Caslon Display", serif;
+  font-family: "Dosis", sans-serif;
   background: #fca311;
-  padding-top: 100px;
+  padding-top: 50px;
 `;
 const Title = styled.h1`
   text-align: center;
   margin-top: 0px;
+  font-weight: 900;
   color: white;
   font-size: 70px;
   ${phoneOnly(`
     font-size: 40px;
    `)}
+`;
+
+const SubTitle = styled.h3`
+  font-size: 25px;
 `;
 
 const AppHeader = styled.header`
@@ -41,6 +46,7 @@ function App() {
       <Title>Colin Dowda </Title>
       <AppHeader>
         <MainImage src={ColImg} alt="logo" />
+        <SubTitle>(Website Coming Soon)</SubTitle>
       </AppHeader>
     </MainContainer>
   );
