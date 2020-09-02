@@ -19,10 +19,6 @@ const Title = styled.h1`
   ${phoneOnly(`
     font-size: 40px;
    `)}
-  &:hover {
-    color: black;
-    cursor: default;
-  }
 `;
 
 const SubTitle = styled.h3`
