@@ -4,7 +4,6 @@ import { phoneOnly } from "../../util/breakpoints";
 
 const MainContainer = styled.div`
   text-align: center;
-  font-family: "Dosis", sans-serif;
   background: #fca311;
   padding-top: 50px;
   min-height: 100vh;

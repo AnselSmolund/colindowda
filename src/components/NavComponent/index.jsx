@@ -13,10 +13,12 @@ import {
   INSTAGRAM_LINK
 } from "../../util/constants";
 
+const MainContainer = styled(Container)``;
+
 function NavComponent() {
   return (
     <Navbar sticky="top" expand="lg" className="main-nav">
-      <Container style={{ color: "red" }}>
+      <MainContainer>
         <Navbar.Brand href="/"> Colin Dowda </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -41,7 +43,7 @@ function NavComponent() {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-      </Container>
+      </MainContainer>
     </Navbar>
     // <Navbar>
     // <Navbar.Toggle aria-controls="responsive-navbar-nav" />
