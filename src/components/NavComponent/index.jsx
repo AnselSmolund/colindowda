@@ -17,7 +17,12 @@ const MainContainer = styled(Container)``;
 
 function NavComponent() {
   return (
-    <Navbar sticky="top" expand="lg" className="main-nav">
+    <Navbar
+      sticky="top"
+      expand="lg"
+      className="main-nav"
+      style={{ background: "transparent !important" }}
+    >
       <MainContainer>
         <Navbar.Brand href="/"> Colin Dowda </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

@@ -1,15 +1,22 @@
 import React from "react";
 import "./style.css";
 import ColImg from "../../assets/images/colinImg.jpg";
+import ColImg2 from "../../assets/images/colin_headshot_2.jpeg";
 import styled from "styled-components";
 import { phoneOnly } from "../../util/breakpoints";
 import { MainTheme } from "../../styles/colors";
+import Image from "react-bootstrap/Image";
 
 const MainContainer = styled.div`
   text-align: center;
   background: ${MainTheme.orange};
-  padding-top: 50px;
+  min-height: 110vh;
+  margin-top: -60px;
+  ${phoneOnly(`
+    margin-top: 0px;
+ `)}
 `;
+
 const Title = styled.h1`
   text-align: center;
   margin-top: 0px;
@@ -32,22 +39,18 @@ const AppHeader = styled.header`
   align-items: center;
 `;
 
-const MainImage = styled.img`
-  height: 60vmin;
+const MainImage = styled(Image)`
   pointer-events: none;
-  ${phoneOnly(`
-    height: 100vmin;
-  `)}
+  width: 100vw;
+  height: 105vh;
+  object-fit: cover;
+  flex: 1;
 `;
 
 function Home() {
   return (
     <MainContainer>
-      <Title>Colin Dowda </Title>
-      <AppHeader>
-        <MainImage src={ColImg} alt="logo" />
-        <SubTitle>(Website Coming Soon)</SubTitle>
-      </AppHeader>
+      <MainImage src={ColImg2} alt="logo" />
     </MainContainer>
   );
 }
