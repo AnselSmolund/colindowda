@@ -3,11 +3,11 @@ import "./style.css";
 import ColImg from "../../assets/images/colinImg.jpg";
 import styled from "styled-components";
 import { phoneOnly } from "../../util/breakpoints";
+import { MainTheme } from "../../styles/colors";
 
 const MainContainer = styled.div`
   text-align: center;
-  font-family: "Dosis", sans-serif;
-  background: #fca311;
+  background: ${MainTheme.orange};
   padding-top: 50px;
 `;
 const Title = styled.h1`

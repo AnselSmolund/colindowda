@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import styled from "styled-components";
 import NavComponent from "./components/NavComponent";
 import About from "./pages/About";
 import Home from "./pages/Home";
@@ -8,10 +9,13 @@ import Admin from "./pages/Admin";
 import BlogPost from "./components/BlogPost";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+const MainContainer = styled.div`
+  font-family: "Dosis", sans-serif;
+`;
 function App() {
   return (
     <Router>
-      <div>
+      <MainContainer>
         <NavComponent />
         <Switch>
           <Route exact path="/" component={Home} />
@@ -20,7 +24,7 @@ function App() {
           <Route exact path="/blog/:id" component={BlogPost} />
           <Route exact path="/admin" component={Admin} />
         </Switch>
-      </div>
+      </MainContainer>
     </Router>
   );
 }
