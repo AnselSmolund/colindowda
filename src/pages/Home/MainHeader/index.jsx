@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./style.css";
 import ColImg from "../../../assets/images/colinImg.jpg";
 import styled from "styled-components";
@@ -94,9 +94,19 @@ const MobileRow = styled(Row)`
 margin-top:80px
 `)}
 `;
+
 function MainHeader(props) {
   const [videoOpen, toggleVideo] = useState(false);
-
+  const aboutBtn = useRef(null);
+  function fix() {
+    var el = aboutBtn.current;
+    var par = el.parentNode;
+    var next = el.nextSibling;
+    par.removeChild(el);
+    setTimeout(function() {
+      par.insertBefore(el, next);
+    }, 0);
+  }
   return (
     <MainContainer>
       {videoOpen && (
@@ -108,7 +118,9 @@ function MainHeader(props) {
           </MobileRow>
           <Row style={{ marginTop: 50 }}>
             <AboutMeCol md={4} className="mt-5">
-              <HireMeBtn href="/about">About Colin</HireMeBtn>
+              <HireMeBtn href="/about" ref={aboutBtn}>
+                About Colin
+              </HireMeBtn>
             </AboutMeCol>
             <HireMeCol md={4} className="mt-5">
               <HireMeBtn href="/videos"> Watch More </HireMeBtn>
@@ -133,7 +145,15 @@ function MainHeader(props) {
           </Row>
           <Row style={{ paddingTop: 40 }}>
             <Col md={6} className="mt-5">
-              <HireMeBtn href="#" onClick={() => toggleVideo(!videoOpen)}>
+              <HireMeBtn
+                href="#"
+                onClick={() => {
+                  toggleVideo(!videoOpen);
+                  setTimeout(() => {
+                    fix();
+                  }, 1);
+                }}
+              >
                 Watch Colin
               </HireMeBtn>
             </Col>
