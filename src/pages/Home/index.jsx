@@ -1,54 +1,57 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./style.css";
 import ColImg from "../../assets/images/colinImg.jpg";
+import ColImg2 from "../../assets/images/colin_headshot_2.jpeg";
 import styled from "styled-components";
 import { phoneOnly } from "../../util/breakpoints";
 import { MainTheme } from "../../styles/colors";
+import Image from "react-bootstrap/Image";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import { Player, BigPlayButton } from "video-react";
+import ImgThumbnail from "../../assets/images/videoThumbnail.png";
+import MainVideo from "./MainVideo";
+import MainHeader from "./MainHeader";
 
-const MainContainer = styled.div`
+const MainContainer = styled(Container)`
   text-align: center;
-  background: ${MainTheme.orange};
-  padding-top: 50px;
+  ${phoneOnly(`
+    margin-top: 0px;
+ `)}
 `;
+
 const Title = styled.h1`
   text-align: center;
-  margin-top: 0px;
+  margin-top: 150px;
   font-weight: 900;
   color: white;
-  font-size: 70px;
+  font-size: 60px;
   ${phoneOnly(`
     font-size: 40px;
    `)}
 `;
 
-const SubTitle = styled.h3`
-  font-size: 25px;
-`;
-
-const AppHeader = styled.header`
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const MainImage = styled.img`
-  height: 60vmin;
-  pointer-events: none;
-  ${phoneOnly(`
-    height: 100vmin;
-  `)}
+const MainImage = styled(Image)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 `;
 
 function Home() {
   return (
-    <MainContainer>
-      <Title>Colin Dowda </Title>
-      <AppHeader>
-        <MainImage src={ColImg} alt="logo" />
-        <SubTitle>(Website Coming Soon)</SubTitle>
-      </AppHeader>
-    </MainContainer>
+    <>
+      <MainImage src={ColImg2} alt="logo" />
+      <MainContainer fluid>
+        <Row>
+          <MainHeader></MainHeader>
+        </Row>
+      </MainContainer>
+    </>
   );
 }
 
