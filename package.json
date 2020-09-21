@@ -25,6 +25,10 @@
     "npm": "6.4.1",
     "node": "10.15.3"
   },
+  "engines": {
+    "npm": "6.4.1",
+    "node": "10.15.3"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
