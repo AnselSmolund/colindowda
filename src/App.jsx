@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import Admin from "./pages/Admin";
+import Contact from "./pages/Contact";
 import BlogPost from "./components/BlogPost";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/blog" component={Blog} />
           <Route exact path="/blog/:id" component={BlogPost} />
           <Route exact path="/admin" component={Admin} />
+          <Route exact path="/contact" component={Contact} />
         </Switch>
       </MainContainer>
     </Router>
