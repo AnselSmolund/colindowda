@@ -82,13 +82,19 @@ margin-top:140px
 function MainHeader(props) {
   const [videoOpen, toggleVideo] = useState(false);
   const aboutBtn = useRef(null);
+  const watchBtn = useRef(null);
   function fix() {
     var el = aboutBtn.current;
+    var el2 = watchBtn.current;
     var par = el.parentNode;
+    var par2 = el2.parentNode;
     var next = el.nextSibling;
+    var next2 = el2.nextSibling;
     par.removeChild(el);
+    par2.removeChild(el2);
     setTimeout(function() {
       par.insertBefore(el, next);
+      par2.insertBefore(el2, next2);
     }, 0);
   }
   return (
@@ -121,6 +127,7 @@ function MainHeader(props) {
                   clickFunction={() => {
                     window.location = "/videos";
                   }}
+                  reference={watchBtn}
                   btnText={"Watch More"}
                 />
               </HireMeCol>
