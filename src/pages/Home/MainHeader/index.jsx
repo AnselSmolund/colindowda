@@ -102,15 +102,18 @@ function MainHeader(props) {
       {videoOpen && (
         <>
           <MobileRow>
-            {/* <Col xl={8} style={{ margin: "0 auto" }}>
+            <Col md={8} style={{ margin: "0 auto" }}>
               <MainVideo />
-            </Col> */}
+            </Col>
           </MobileRow>
           <Row style={{ marginTop: 50 }}>
-            <AboutMeCol xl={6}>
+            <AboutMeCol md={4} className="mt-5">
               <HireMeBtn href="/about">About Colin</HireMeBtn>
             </AboutMeCol>
-            <HireMeCol xl={6}>
+            <HireMeCol md={4} className="mt-5">
+              <HireMeBtn href="/videos"> Watch More </HireMeBtn>
+            </HireMeCol>
+            <HireMeCol md={4} className="mt-5">
               <HireMeBtn href="/contact"> Hire Colin </HireMeBtn>
             </HireMeCol>
           </Row>
