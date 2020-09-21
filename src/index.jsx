@@ -3,10 +3,12 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Firebase, { FirebaseContext } from "./components/Firebase";
+import "../node_modules/video-react/dist/video-react.css";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <FirebaseContext.Provider value={new Firebase()}>
     <App />
-  </React.StrictMode>,
+  </FirebaseContext.Provider>,
   document.getElementById("root")
 );

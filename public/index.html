@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-176984597-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-176984597-1");
+    </script>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/colin_small.jpeg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -16,9 +30,16 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Dosis&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -43,5 +64,28 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCeDNJrk3_A9kg5RkBjT1h-iKieZ1Tmmks",
+        authDomain: "colindowda-8a616.firebaseapp.com",
+        databaseURL: "https://colindowda-8a616.firebaseio.com",
+        projectId: "colindowda-8a616",
+        storageBucket: "colindowda-8a616.appspot.com",
+        messagingSenderId: "1014027148420",
+        appId: "1:1014027148420:web:cf8348923d088b9c9536d1",
+        measurementId: "G-K728KJFEV6"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
   </body>
 </html>

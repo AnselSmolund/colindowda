@@ -1,47 +1,33 @@
 import React from "react";
 import "./App.css";
-import ColImg from "./colinImg.jpg";
 import styled from "styled-components";
-import { phoneOnly } from "./util/breakpoints";
+import NavComponent from "./components/NavComponent";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import Blog from "./pages/Blog";
+import Admin from "./pages/Admin";
+import Contact from "./pages/Contact";
+import BlogPost from "./components/BlogPost";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const MainContainer = styled.div`
-  text-align: center;
-  font-family: "Libre Caslon Display", serif;
-  background: #fca311;
+  font-family: "Dosis", sans-serif;
 `;
-const Title = styled.h1`
-  text-align: center;
-  color: white;
-  font-size: 100px;
-  ${phoneOnly(`
-    font-size: 40px;
-   `)}
-`;
-
-const AppHeader = styled.header`
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
-const MainImage = styled.img`
-  height: 60vmin;
-  pointer-events: none;
-  ${phoneOnly(`
-    height: 100vmin;
-  `)}
-`;
-
 function App() {
   return (
-    <MainContainer>
-      <AppHeader>
-        <Title>Colin Dowda </Title>
-        <MainImage src={ColImg} alt="logo" />
-      </AppHeader>
-    </MainContainer>
+    <Router>
+      <MainContainer>
+        <NavComponent />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route exact path="/blog" component={Blog} />
+          <Route exact path="/blog/:id" component={BlogPost} />
+          <Route exact path="/admin" component={Admin} />
+          <Route exact path="/contact" component={Contact} />
+        </Switch>
+      </MainContainer>
+    </Router>
   );
 }
 
