@@ -94,9 +94,19 @@ const MobileRow = styled(Row)`
 margin-top:80px
 `)}
 `;
+
 function MainHeader(props) {
   const [videoOpen, toggleVideo] = useState(false);
   const aboutBtn = useRef(null);
+  function fix() {
+    var el = aboutBtn.current;
+    var par = el.parentNode;
+    var next = el.nextSibling;
+    par.removeChild(el);
+    setTimeout(function() {
+      par.insertBefore(el, next);
+    }, 0);
+  }
   return (
     <MainContainer>
       {videoOpen && (
@@ -140,7 +150,7 @@ function MainHeader(props) {
                 onClick={() => {
                   toggleVideo(!videoOpen);
                   setTimeout(() => {
-                    aboutBtn.current.blur();
+                    fix();
                   }, 1);
                 }}
               >
