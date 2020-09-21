@@ -73,6 +73,12 @@ const MobileRow = styled(Row)`
 `)}
 `;
 
+const MainTitleRow = styled(Row)`
+  ${phoneOnly(`
+margin-top:140px
+`)}
+`;
+
 function MainHeader(props) {
   const [videoOpen, toggleVideo] = useState(false);
   const aboutBtn = useRef(null);
@@ -132,13 +138,13 @@ function MainHeader(props) {
       )}
       {!videoOpen && (
         <Container>
-          <Row>
+          <MainTitleRow>
             <Col>
               <Title animate={{ x: [-400, 0] }} transition={{ duration: 0.5 }}>
                 Colin Dowda
               </Title>
             </Col>
-          </Row>
+          </MainTitleRow>
           <Row>
             <Col>
               <SubTitle
