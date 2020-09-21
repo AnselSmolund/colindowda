@@ -5,7 +5,7 @@ import ImgThumbnail from "../../../assets/images/videoThumbnail.png";
 
 function MainVideo(props) {
   return (
-    <Player src={MainVid} poster={ImgThumbnail}>
+    <Player src={MainVid} poster={ImgThumbnail} autoPlay>
       <BigPlayButton position="center" />
       <ControlBar autoHide={false}>
         <PlayToggle />
