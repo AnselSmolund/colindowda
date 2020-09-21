@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 import styled from "styled-components";
 import { MainTheme } from "../../styles/colors";
@@ -6,26 +6,65 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import { FaInstagram, FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
+
+import { HiMenu, HiX } from "react-icons/hi";
 import {
   FACEBOOK_LINK,
   YOUTUBE_LINK,
   TWITTER_LINK,
   INSTAGRAM_LINK
 } from "../../util/constants";
+import { phoneOnly } from "../../util/breakpoints";
 
 const MainContainer = styled(Container)``;
 
+const MainNav = styled(Navbar)`
+  background: transparent;
+  ${phoneOnly(`
+    background: rgba(255,255,255,0.9);
+    font-size: 20px;
+    
+  `)}
+  transition: 0.3s;
+`;
+
+const NavbarToggle = styled(Navbar.Toggle)`
+  border: none;
+  &:focus {
+    outline: none;
+  }
+`;
+const SocialNavs = styled(Nav)`
+  font-size: 24px;
+  &:hover {
+    color: blue;
+  }
+`;
 function NavComponent() {
+  const [navOpen, toggleNav] = useState(false);
   return (
-    <Navbar
+    <MainNav
       sticky="top"
-      expand="lg"
+      expand="md"
       className="main-nav"
-      style={{ background: "transparent !important" }}
+      style={navOpen ? { background: "white" } : { background: "transparent" }}
     >
       <MainContainer>
         <Navbar.Brand href="/"> Colin Dowda </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <NavbarToggle
+          onClick={() =>
+            setTimeout(() => {
+              toggleNav(!navOpen);
+            }, 100)
+          }
+          aria-controls="responsive-navbar-nav"
+        >
+          {navOpen ? (
+            <HiX style={{ fontSize: 24 }} />
+          ) : (
+            <HiMenu style={{ fontSize: 24 }} />
+          )}
+        </NavbarToggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link href="/about">About</Nav.Link>
@@ -33,7 +72,7 @@ function NavComponent() {
             <Nav.Link href="/videos">Videos</Nav.Link>
             <Nav.Link href="/contact">Contact</Nav.Link>
           </Nav>
-          <Nav>
+          <SocialNavs>
             <Nav.Link href={INSTAGRAM_LINK}>
               <FaInstagram></FaInstagram>
             </Nav.Link>
@@ -46,37 +85,10 @@ function NavComponent() {
             <Nav.Link href={FACEBOOK_LINK}>
               <FaFacebook></FaFacebook>
             </Nav.Link>
-          </Nav>
+          </SocialNavs>
         </Navbar.Collapse>
       </MainContainer>
-    </Navbar>
-    // <Navbar>
-    // <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-    // <Navbar.Collapse id="responsive-navbar-nav"></Navbar.Collapse>
-    //   <Nav.Item as="li">
-    //     <Nav.Link href="/">Home</Nav.Link>
-    //   </Nav.Item>
-    //   <Nav.Item as="li">
-    //     <Nav.Link href="/about" eventKey="link-1">
-    //       About
-    //     </Nav.Link>
-    //   </Nav.Item>
-    //   <Nav.Item as="li">
-    //     <Nav.Link href="/blog" eventKey="link-2">
-    //       Blog
-    //     </Nav.Link>
-    //   </Nav.Item>
-    //   <Nav.Item as="li">
-    //     <Nav.Link href="/videos" eventKey="link-3">
-    //       Videos
-    //     </Nav.Link>
-    //   </Nav.Item>
-    //   <Nav.Item as="li">
-    //     <Nav.Link href="/contact" eventKey="link-4">
-    //       Contact
-    //     </Nav.Link>
-    //   </Nav.Item>
-    // </Nav>
+    </MainNav>
   );
 }
 
