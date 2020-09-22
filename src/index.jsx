@@ -8,11 +8,4 @@ import "../node_modules/video-react/dist/video-react.css";
 import { AnimatePresence } from "framer-motion";
 import { BrowserRouter } from "react-router-dom";
 
-ReactDOM.render(
-  <BrowserRouter>
-    <UserProvider>
-      <App />
-    </UserProvider>
-  </BrowserRouter>,
-  document.getElementById("root")
-);
+ReactDOM.render(<App />, document.getElementById("root"));
