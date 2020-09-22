@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 import firebase from "firebase";
 import Form from "react-bootstrap/Form";
 import { FaTrash, FaPencilAlt } from "react-icons/fa";
@@ -78,48 +79,54 @@ function BlogTile(props) {
   if (!editPost) {
     return (
       <Container
-        style={{ paddingBottom: 100, paddingLeft: 100, paddingRight: 100 }}
+        style={{ paddingBottom: 40, paddingLeft: 100, paddingRight: 100 }}
       >
-        <Row>
-          <Col md="auto">
-            <Link to={`/blog/${post.id}`}>
-              <BlogTitle>
-                <strong>{post.title}</strong>
-              </BlogTitle>
-            </Link>
-          </Col>
-          {user && (
-            <Col md={"auto"} style={{ marginTop: 10 }}>
-              <FaTrash
-                onClick={() => throwPostAway(post.id)}
-                style={{ margin: 10 }}
-              />
-              <FaPencilAlt
-                onClick={() => toggleEdit(true)}
-                style={{ margin: 10 }}
-              />
-            </Col>
-          )}
-        </Row>
-        <Row>
-          <Col md="auto">
-            <p>
-              <strong>{post.timeStamp}</strong>
-            </p>
-          </Col>
-          <Col md="auto">
-            <p>
-              <strong>Views:</strong> {post.viewCount}
-            </p>
-          </Col>
-        </Row>
-        <Row>
-          <Col md="auto">
-            <MainTile
-              dangerouslySetInnerHTML={{ __html: post.body }}
-            ></MainTile>
-          </Col>
-        </Row>
+        <Card>
+          <Card.Body>
+            <Row>
+              <Col md="auto">
+                <Link to={`/blog/${post.id}`}>
+                  <BlogTitle>
+                    <Card.Title>{post.title}</Card.Title>
+                  </BlogTitle>
+                </Link>
+              </Col>
+              {user && (
+                <Col md={"auto"}>
+                  <FaTrash
+                    onClick={() => throwPostAway(post.id)}
+                    style={{ marginLeft: 10 }}
+                  />
+                  <FaPencilAlt
+                    onClick={() => toggleEdit(true)}
+                    style={{ marginLeft: 10 }}
+                  />
+                </Col>
+              )}
+            </Row>
+            <Card.Text>
+              <Row>
+                <Col md="auto">
+                  <p>
+                    <strong>{post.timeStamp}</strong>
+                  </p>
+                </Col>
+                <Col md="auto">
+                  <p>
+                    <strong>Views:</strong> {post.viewCount}
+                  </p>
+                </Col>
+              </Row>
+              <Row>
+                <Col md="auto">
+                  <MainTile
+                    dangerouslySetInnerHTML={{ __html: post.body }}
+                  ></MainTile>
+                </Col>
+              </Row>
+            </Card.Text>
+          </Card.Body>
+        </Card>
       </Container>
     );
   } else {
