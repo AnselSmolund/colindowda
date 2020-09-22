@@ -49,23 +49,24 @@ function Admin() {
 
   function handleFormSubmit(event) {
     // send title and content to firebase
+    event.preventDefault();
     let ref = firebase.database().ref();
     var postsRef = ref.child("blog");
     var newPostRef = postsRef.push();
-    newPostRef.set({
-      body: content,
-      title: title,
-      viewCount: 0,
-      timeStamp: moment().format("MMMM Do YYYY")
-    });
+    newPostRef
+      .set({
+        body: content,
+        title: title,
+        viewCount: 0,
+        timeStamp: moment().format("MMMM Do YYYY")
+      })
+      .then(alert("blog posted"));
   }
 
   function handleTitleChange(event) {
     setTitle(event.target.value);
   }
-  if (!user) {
-    return <SignIn />;
-  } else {
+  if (user) {
     return (
       <MainContainer>
         <h1> Admin Portal </h1>
@@ -105,6 +106,8 @@ function Admin() {
         </Container>
       </MainContainer>
     );
+  } else {
+    return <SignIn />;
   }
 }
 

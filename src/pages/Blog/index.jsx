@@ -13,6 +13,7 @@ const MainContainer = styled.div`
 const Title = styled.h1`
   text-align: center;
   margin-top: 0px;
+  margin-bottom: 40px;
   font-weight: 900;
   color: #ff9f1c;
   font-size: 70px;
@@ -46,7 +47,7 @@ function Blog() {
 
   return (
     <MainContainer>
-      <Title> Blog </Title>
+      <Title> Colin's Thoughts </Title>
       {blogPosts.map(post => (
         <BlogTile post={post} />
       ))}
