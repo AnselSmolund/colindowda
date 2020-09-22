@@ -16,8 +16,10 @@ import { phoneOnly } from "../../../util/breakpoints";
 const BlogTitle = styled.h1`
   color: black;
   text-align: left;
+  font-weight: bold;
   ${phoneOnly(`
     text-align:center;
+    font-size: 25px;
 `)}
 `;
 const MainTile = styled.p`
@@ -108,9 +110,7 @@ function BlogTile(props) {
         <Row className="justify-content-left">
           <Col xs="auto">
             <Link to={`/blog/${post.id}`}>
-              <BlogTitle>
-                <h1>{post.title}</h1>
-              </BlogTitle>
+              <BlogTitle>{post.title}</BlogTitle>
             </Link>
           </Col>
           {user && (
