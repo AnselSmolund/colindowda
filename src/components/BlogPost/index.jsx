@@ -20,6 +20,10 @@ function BlogPost({ match }) {
 
   const fetchItem = async () => {
     var ref = firebase.database().ref(`blog/${match.params.id}`);
+    ref.child("viewCount").once("value", function(data) {
+      ref.child("viewCount").set(parseInt(data.val()) + 1);
+    });
+    //ref.child("viewCount").set(parseInt(ref.child("viewCount")) + 1);
     ref.once("value").then(snap => {
       console.log(snap.val());
       setPost(snap.val());

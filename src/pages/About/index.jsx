@@ -18,25 +18,6 @@ const Title = styled.h1`
    `)}
 `;
 
-const SubTitle = styled.h3`
-  font-size: 25px;
-`;
-
-const AppHeader = styled.header`
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const MainImage = styled.img`
-  height: 60vmin;
-  pointer-events: none;
-  ${phoneOnly(`
-    height: 100vmin;
-  `)}
-`;
-
 function About() {
   return (
     <MainContainer>
@@ -46,4 +27,3 @@ function About() {
 }
 
 export default About;
-
