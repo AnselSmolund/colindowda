@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
 import { Player, BigPlayButton, ControlBar, PlayToggle } from "video-react";
 import MainVid from "../../../assets/ShortVideo.mov";
 import ImgThumbnail from "../../../assets/images/videoThumbnail.png";

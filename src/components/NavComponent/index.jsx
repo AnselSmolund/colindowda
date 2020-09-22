@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./style.css";
 import styled from "styled-components";
-import { MainTheme } from "../../styles/colors";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";

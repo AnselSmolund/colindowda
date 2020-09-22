@@ -12,11 +12,5 @@ const config = {
   measurementId: "G-K728KJFEV6"
 };
 
-class Firebase {
-  constructor() {
-    app.initializeApp(config);
-    this.db = app.database();
-  }
-}
-
-export default Firebase;
+app.initializeApp(config);
+export const auth = app.auth();
