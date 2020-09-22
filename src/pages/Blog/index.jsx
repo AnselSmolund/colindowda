@@ -1,28 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
 import styled from "styled-components";
-import { phoneOnly } from "../../util/breakpoints";
 import firebase from "firebase";
 import BlogTile from "./BlogTile";
+import Spinner from "react-bootstrap/Spinner";
+import { MainContainer, Title } from "../../components/StyledComponents";
 
-const MainContainer = styled.div`
-  text-align: center;
-  padding-top: 50px;
-  min-height: 100vh;
-`;
-const Title = styled.h1`
-  text-align: center;
-  margin-top: 0px;
-  margin-bottom: 40px;
-  font-weight: 900;
-  color: #ff9f1c;
-  font-size: 70px;
-  ${phoneOnly(`
-    font-size: 40px;
-   `)}
-`;
 function Blog() {
   const [posts, setPosts] = useState({});
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let ref = firebase.database().ref();
@@ -32,6 +18,7 @@ function Blog() {
       }
     });
   }, []);
+
   let blogPosts = [];
   if (posts) {
     for (var key in posts) {
@@ -44,13 +31,26 @@ function Blog() {
       });
     }
   }
+  useEffect(() => {
+    if (blogPosts.length > 0) {
+      setLoading(false);
+    }
+  }, [blogPosts]);
 
   return (
-    <MainContainer>
+    <MainContainer style={loading ? { textAlign: "center" } : {}}>
       <Title> Colin's Thoughts </Title>
-      {blogPosts.map(post => (
-        <BlogTile post={post} />
-      ))}
+      {loading ? (
+        <Spinner animation="border" role="status" variant="warning" size="xl">
+          <span className="sr-only">Loading...</span>
+        </Spinner>
+      ) : (
+        <>
+          {blogPosts.map(post => (
+            <BlogTile post={post} />
+          ))}
+        </>
+      )}
     </MainContainer>
   );
 }
