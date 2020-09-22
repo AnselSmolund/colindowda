@@ -8,6 +8,9 @@ import Container from "react-bootstrap/Container";
 import MainVideo from "../MainVideo";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import { motion, AnimatePresence } from "framer-motion";
+import MainBtn from "./MainBtn";
+
 const MainContainer = styled(Container)`
   text-align: center;
   margin: 0 auto;
@@ -27,19 +30,19 @@ const MainContainer = styled(Container)`
 
   `)};
 `;
-const Title = styled.h1`
-  color: ${MainTheme.cream};
+const Title = styled(motion.h1)`
+  color: ${MainTheme.orange};
   font-size: 100px;
   font-weight: 900;
   ${phoneOnly(`
-    font-size: 70px;
+    font-size: 60px;
    `)}
 `;
 
-const SubTitle = styled.h3`
+const SubTitle = styled(motion.h3)`
   font-size: 50px;
-  color: white;
-  font-weight: 100;
+  color: ${MainTheme.cream};
+  font-weight: bold;
   ${phoneOnly(`
   font-size: 20px;
  `)}
@@ -50,31 +53,6 @@ const AppHeader = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-const HireMeBtn = styled.a`
-  background-color: transparent;
-  color: #fff;
-  border: 2px solid ${MainTheme.lightBlue};
-  transition: color 170ms ease-in-out, border-color 170ms ease-in-out;
-  text-decoration: none;
-  padding: 1em;
-  text-align: center;
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-weight: 900;
-  font-style: normal;
-  &:hover {
-    background-color: ${MainTheme.lightBlue};
-    border: 2px solid ${MainTheme.lightBlue};
-    color: #fff;
-    text-decoration: none;
-  }
-  &:focus {
-    border: 2px solid ${MainTheme.lightBlue};
-    outline: none;
-  }
 `;
 
 const AboutMeCol = styled(Col)`
@@ -91,76 +69,132 @@ margin-top:80px
 const MobileRow = styled(Row)`
   margin-top: -70px;
   ${phoneOnly(`
-margin-top:80px
+    margin-top:140px
+`)}
+`;
+
+const MainTitleRow = styled(Row)`
+  ${phoneOnly(`
+margin-top:140px
 `)}
 `;
 
 function MainHeader(props) {
   const [videoOpen, toggleVideo] = useState(false);
   const aboutBtn = useRef(null);
+  const watchBtn = useRef(null);
   function fix() {
     var el = aboutBtn.current;
+    var el2 = watchBtn.current;
     var par = el.parentNode;
+    var par2 = el2.parentNode;
     var next = el.nextSibling;
+    var next2 = el2.nextSibling;
     par.removeChild(el);
+    par2.removeChild(el2);
     setTimeout(function() {
       par.insertBefore(el, next);
+      par2.insertBefore(el2, next2);
     }, 0);
   }
   return (
     <MainContainer>
       {videoOpen && (
         <>
-          <MobileRow>
-            <Col md={8} style={{ margin: "0 auto" }}>
-              <MainVideo />
-            </Col>
-          </MobileRow>
-          <Row style={{ marginTop: 50 }}>
-            <AboutMeCol md={4} className="mt-5">
-              <HireMeBtn href="/about" ref={aboutBtn}>
-                About Colin
-              </HireMeBtn>
-            </AboutMeCol>
-            <HireMeCol md={4} className="mt-5">
-              <HireMeBtn href="/videos"> Watch More </HireMeBtn>
-            </HireMeCol>
-            <HireMeCol md={4} className="mt-5">
-              <HireMeBtn href="/contact"> Hire Colin </HireMeBtn>
-            </HireMeCol>
-          </Row>
+          <motion.div
+            animate={{ scale: [0, 1] }}
+            transition={{ duration: 0.5 }}
+          >
+            <MobileRow className="justify-content-md-center">
+              <Col md={8} style={{ margin: "0 auto" }}>
+                <MainVideo />
+              </Col>
+            </MobileRow>
+          </motion.div>
+          <motion.div animate={{ y: [-100, 0] }} transition={{ duration: 0.5 }}>
+            <Row className="justify-content-md-center">
+              <AboutMeCol md="auto" className="mt-5">
+                <MainBtn
+                  clickFunction={() => {
+                    window.location = "/about";
+                  }}
+                  reference={aboutBtn}
+                  btnText={"About Colin"}
+                />
+              </AboutMeCol>
+              <HireMeCol md="auto" className="mt-5">
+                <MainBtn
+                  clickFunction={() => {
+                    window.location = "/videos";
+                  }}
+                  reference={watchBtn}
+                  btnText={"Watch More"}
+                />
+              </HireMeCol>
+              <HireMeCol md="auto" className="mt-5">
+                <MainBtn
+                  clickFunction={() => {
+                    window.location = "/contact";
+                  }}
+                  btnText={"Hire Colin"}
+                />
+              </HireMeCol>
+            </Row>
+          </motion.div>
         </>
       )}
       {!videoOpen && (
         <Container>
+          <MainTitleRow>
+            <Col>
+              <Title animate={{ x: [-400, 0] }} transition={{ duration: 0.5 }}>
+                Colin Dowda
+              </Title>
+            </Col>
+          </MainTitleRow>
           <Row>
             <Col>
-              <Title>Colin Dowda </Title>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <SubTitle> Comedy Writer, Improviser, and Stand-Up </SubTitle>
-            </Col>
-          </Row>
-          <Row style={{ paddingTop: 40 }}>
-            <Col md={6} className="mt-5">
-              <HireMeBtn
-                href="#"
-                onClick={() => {
-                  toggleVideo(!videoOpen);
-                  setTimeout(() => {
-                    fix();
-                  }, 1);
-                }}
+              <SubTitle
+                animate={{ x: [400, 0] }}
+                transition={{ duration: 0.5 }}
               >
-                Watch Colin
-              </HireMeBtn>
-            </Col>
-            <Col md={6} className="mt-5">
-              <HireMeBtn href="/contact"> Hire Colin </HireMeBtn>
+                {" "}
+                Comedy Writer, Improviser, and Stand-Up{" "}
+              </SubTitle>
             </Col>
           </Row>
+          <motion.div
+            animate={{ scale: [0, 1] }}
+            transition={{ duration: 0.5 }}
+          >
+            <Row className="justify-content-md-center">
+              <Col md="auto" className="mt-5">
+                <MainBtn
+                  btnText={"Watch Colin"}
+                  clickFunction={() => {
+                    console.log("clicked");
+                    window.location = "#";
+                    toggleVideo(!videoOpen);
+                    setTimeout(() => {
+                      fix();
+                    }, 1);
+                  }}
+                />
+              </Col>
+              <Col
+                md="auto"
+                className="mt-5"
+                style={{ letterSpacing: "0.4em" }}
+              >
+                <MainBtn
+                  btnText={"Hire Colin"}
+                  clickFunction={() => {
+                    window.location = "/contact";
+                  }}
+                />
+              </Col>
+            </Row>
+          </motion.div>
         </Container>
       )}
     </MainContainer>
