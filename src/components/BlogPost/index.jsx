@@ -13,6 +13,8 @@ const MainContainer = styled.div`
 
 function BlogPost({ match }) {
   useEffect(() => {
+    console.log("blog post loaded");
+    window.scrollTo(0, 0);
     fetchItem();
   }, []);
 
@@ -25,11 +27,9 @@ function BlogPost({ match }) {
     });
     //ref.child("viewCount").set(parseInt(ref.child("viewCount")) + 1);
     ref.once("value").then(snap => {
-      console.log(snap.val());
       setPost(snap.val());
     });
   };
-  console.log(match);
   return (
     <MainContainer>
       <Container>
