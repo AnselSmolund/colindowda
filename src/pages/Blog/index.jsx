@@ -46,7 +46,7 @@ function Blog() {
         </Spinner>
       ) : (
         <>
-          {blogPosts.map(post => (
+          {blogPosts.reverse().map(post => (
             <BlogTile post={post} />
           ))}
         </>

@@ -145,11 +145,12 @@ function BlogTile(props) {
             ></MainTile>
           </Col>
         </Row>
+        <hr />
       </MobileContainer>
     );
   } else {
     return (
-      <MainContainer>
+      <MobileContainer>
         <MainForm onSubmit={handleFormSubmit} style={{ textAlign: "left" }}>
           <Form.Group controlId="postTitle" name="postTitle">
             <TitleFormInput
@@ -179,11 +180,23 @@ function BlogTile(props) {
             onEditorChange={handleEditorChange}
             value={post.body}
           />
-          <Button type="submit" value="Submit" style={{ marginTop: 20 }}>
+          <Button
+            type="submit"
+            value="Submit"
+            style={{ margin: 20, marginLeft: 0 }}
+          >
             Submit
           </Button>
+          <Button
+            style={{ margin: 20, marginLeft: 5 }}
+            onClick={() => {
+              toggleEdit(false);
+            }}
+          >
+            Cancel
+          </Button>
         </MainForm>
-      </MainContainer>
+      </MobileContainer>
     );
   }
 }
