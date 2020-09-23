@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import "./style.css";
-import ColImg from "../../../assets/images/colinImg.jpg";
 import styled from "styled-components";
 import { phoneOnly } from "../../../util/breakpoints";
 import { MainTheme } from "../../../styles/colors";
@@ -8,7 +7,7 @@ import Container from "react-bootstrap/Container";
 import MainVideo from "../MainVideo";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import MainBtn from "./MainBtn";
 
 const MainContainer = styled(Container)`
@@ -46,13 +45,6 @@ const SubTitle = styled(motion.h3)`
   ${phoneOnly(`
   font-size: 20px;
  `)}
-`;
-
-const AppHeader = styled.header`
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 `;
 
 const AboutMeCol = styled(Col)`
