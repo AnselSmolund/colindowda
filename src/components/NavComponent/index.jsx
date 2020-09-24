@@ -4,17 +4,13 @@ import styled from "styled-components";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
+import { motion, AnimateSharedLayout } from "framer-motion";
 import { FaInstagram, FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
-
 import { HiMenu, HiX } from "react-icons/hi";
-import {
-  FACEBOOK_LINK,
-  YOUTUBE_LINK,
-  TWITTER_LINK,
-  INSTAGRAM_LINK
-} from "../../util/constants";
 import { phoneOnly } from "../../util/breakpoints";
 import SocialNav from "./SocialNav";
+import SocialNavGroup from "./SocialNavGroup";
+import NavLink from "./NavLink";
 
 const MainContainer = styled(Container)``;
 
@@ -25,6 +21,7 @@ const MainNav = styled(Navbar)`
     font-size: 20px;
     
   `)}
+  text-transform: uppercase;
   transition: 0.3s;
 `;
 
@@ -34,9 +31,36 @@ const NavbarToggle = styled(Navbar.Toggle)`
     outline: none;
   }
 `;
-const SocialNavs = styled(Nav)``;
+
+export const SocialNavs = styled(Nav)``;
+
+export const screens = [
+  {
+    title: "About",
+    link: "/about",
+    color: "#ff0055"
+  },
+  {
+    title: "Blog",
+    link: "/blog",
+    color: "#0099ff"
+  },
+  {
+    title: "Videos",
+    link: "/videos",
+    color: "#22cc88"
+  },
+  {
+    title: "Contact",
+    link: "/contact",
+    color: "#ffaa00"
+  }
+];
+
 function NavComponent() {
   const [navOpen, toggleNav] = useState(false);
+  const [selected, setSelected] = useState(-1);
+  console.log(selected);
   return (
     <MainNav
       sticky="top"
@@ -62,25 +86,11 @@ function NavComponent() {
         </NavbarToggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/about">About</Nav.Link>
-            <Nav.Link href="/blog">Blog</Nav.Link>
-            <Nav.Link href="/videos">Videos</Nav.Link>
-            <Nav.Link href="/contact">Contact</Nav.Link>
+            {screens.map(({ title, color, link }, i) => (
+              <NavLink link={link}> {title} </NavLink>
+            ))}
           </Nav>
-          <SocialNavs>
-            <SocialNav link={INSTAGRAM_LINK}>
-              <FaInstagram></FaInstagram>
-            </SocialNav>
-            <SocialNav link={TWITTER_LINK}>
-              <FaTwitter></FaTwitter>
-            </SocialNav>
-            <SocialNav link={YOUTUBE_LINK}>
-              <FaYoutube></FaYoutube>
-            </SocialNav>
-            <SocialNav link={FACEBOOK_LINK}>
-              <FaFacebook></FaFacebook>
-            </SocialNav>
-          </SocialNavs>
+          <SocialNavGroup />
         </Navbar.Collapse>
       </MainContainer>
     </MainNav>
