@@ -32,18 +32,22 @@ const MainContainer = styled(Container)`
 const Title = styled(motion.h1)`
   color: ${MainTheme.orange};
   font-size: 100px;
-  font-weight: 900;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   ${phoneOnly(`
     font-size: 60px;
    `)}
 `;
 
 const SubTitle = styled(motion.h3)`
-  font-size: 50px;
+  font-size: 30px;
   color: ${MainTheme.cream};
-  font-weight: bold;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   ${phoneOnly(`
-  font-size: 20px;
+  font-size: 25px;
  `)}
 `;
 
@@ -179,7 +183,7 @@ function MainHeader(props) {
                 style={{ letterSpacing: "0.4em" }}
               >
                 <MainBtn
-                  btnText={"Hire Colin"}
+                  btnText={"Work With Colin"}
                   clickFunction={() => {
                     window.location = "/contact";
                   }}

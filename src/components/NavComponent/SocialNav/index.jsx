@@ -12,11 +12,12 @@ const NavLink = styled(Nav.Link)`
 `;
 
 function SocialNav(props) {
-  const { link } = props;
-  console.log(props);
+  const { link, color } = props;
   return (
     <motion.div animate={{ scale: [0, 1] }} transition={{ duration: 0.5 }}>
-      <NavLink href={link}>{props.children}</NavLink>
+      <NavLink href={link} style={{ color: color }}>
+        {props.children}
+      </NavLink>
     </motion.div>
   );
 }
