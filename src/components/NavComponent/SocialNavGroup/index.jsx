@@ -12,9 +12,9 @@ import { FaInstagram, FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
 
 export const SocialNavs = styled(Nav)``;
 function SocialNavGroup(props) {
-  const { color, size } = props;
+  const { color, size, centered } = props;
   return (
-    <SocialNavs className="justify-content-center">
+    <SocialNavs className={centered && "justify-content-center"}>
       <SocialNav link={INSTAGRAM_LINK} color={color}>
         <FaInstagram style={{ fontSize: size }}></FaInstagram>
       </SocialNav>

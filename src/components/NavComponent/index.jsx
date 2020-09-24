@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 import styled from "styled-components";
 import Navbar from "react-bootstrap/Navbar";
@@ -59,8 +59,6 @@ export const screens = [
 
 function NavComponent() {
   const [navOpen, toggleNav] = useState(false);
-  const [selected, setSelected] = useState(-1);
-  console.log(selected);
   return (
     <MainNav
       sticky="top"
