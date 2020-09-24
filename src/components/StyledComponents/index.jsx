@@ -11,13 +11,12 @@ export const MainContainer = styled(Container)`
 `;
 export const Title = styled.h1`
   text-align: center;
-  margin-bottom: 40px;
   font-weight: 900;
   color: ${MainTheme.orange};
   padding: 10px;
   font-size: 50px;
+  text-transform: uppercase;
   ${phoneOnly(`
     font-size: 40px;
-    margin-bottom:20px;
    `)}
 `;
