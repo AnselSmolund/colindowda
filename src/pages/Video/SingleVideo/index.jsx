@@ -25,7 +25,7 @@ function SingleVideo(props) {
           type="video/mp4"
           width="100%"
           height="100%"
-          allow="autoplay; encrypted-media; picture-in-picture"
+          allow="encrypted-media; picture-in-picture"
           allowFullScreen="allowFullScreen"
         />
       </VideoContainer>
