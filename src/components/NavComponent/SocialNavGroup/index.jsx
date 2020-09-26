@@ -10,11 +10,16 @@ import {
 } from "../../../util/constants";
 import { FaInstagram, FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
 
-export const SocialNavs = styled(Nav)``;
+export const SocialNavs = styled(Nav)`
+  margin-left: ${props => (props.marginleft ? props.marginleft : 0)};
+`;
 function SocialNavGroup(props) {
-  const { color, size, centered } = props;
+  const { color, size, centered, marginLeft } = props;
   return (
-    <SocialNavs className={centered && "justify-content-center"}>
+    <SocialNavs
+      className={centered && "justify-content-center"}
+      marginLeft={marginLeft}
+    >
       <SocialNav link={INSTAGRAM_LINK} color={color}>
         <FaInstagram style={{ fontSize: size }}></FaInstagram>
       </SocialNav>

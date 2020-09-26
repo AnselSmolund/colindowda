@@ -44,7 +44,6 @@ function Video() {
         result => {
           let youtubeIds = [];
           result.items.map(item => {
-            console.log(item.id.videoId);
             youtubeIds.push(item.id.videoId);
           });
           setYouTubeIds(youtubeIds);
@@ -69,8 +68,7 @@ function Video() {
             style={{ display: "block", margin: "0 auto" }}
             onClick={() => setMaxResults(maxResults + 2)}
           >
-            {" "}
-            Load More{" "}
+            Load More
           </HireMeBtnContainer>
         </Col>
       </Row>
