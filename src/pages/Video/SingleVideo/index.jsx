@@ -1,18 +1,34 @@
 import React from "react";
 import { Container, Col } from "react-bootstrap";
+import styled from "styled-components";
+import { phoneOnly } from "../../../util/breakpoints";
 
+const VideoContainer = styled.div`
+  width: 560px;
+  height: 315px;
+  float: none;
+  clear: both;
+  margin: 2px auto;
+  ${phoneOnly(`
+    width: 100%;
+    height: 120%;
+    
+`)}
+`;
 function SingleVideo(props) {
   return (
     <Col xl={6} style={{ padding: 30 }}>
-      <iframe
-        style={{ margin: "0 auto", display: "block" }}
-        id="ytplayer"
-        type="text/html"
-        width="480"
-        height="277"
-        src={`https://www.youtube.com/embed/${props.id}`}
-        frameborder="0"
-      ></iframe>
+      <VideoContainer>
+        <embed
+          src={`https://www.youtube.com/embed/${props.id}`}
+          wmode="transparent"
+          type="video/mp4"
+          width="100%"
+          height="100%"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowFullScreen="allowFullScreen"
+        />
+      </VideoContainer>
     </Col>
   );
 }
