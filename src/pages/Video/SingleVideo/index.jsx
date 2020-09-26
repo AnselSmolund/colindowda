@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Col } from "react-bootstrap";
 import styled from "styled-components";
 import { phoneOnly } from "../../../util/breakpoints";
+import YouTube from "react-youtube";
 
 const VideoContainer = styled.div`
   width: 560px;
@@ -15,19 +16,22 @@ const VideoContainer = styled.div`
     
 `)}
 `;
+
+function onReady(event) {
+  event.target.mute();
+}
 function SingleVideo(props) {
+  const opts = {
+    height: "300",
+    width: "100%",
+    playerVars: {
+      playsinline: 1
+    }
+  };
   return (
-    <Col xl={6} style={{ padding: 30 }}>
-      <VideoContainer>
-        <embed
-          src={`https://www.youtube.com/embed/${props.id}`}
-          wmode="transparent"
-          type="video/mp4"
-          width="100%"
-          height="100%"
-          allow="encrypted-media; picture-in-picture"
-          allowFullScreen="allowFullScreen"
-        />
+    <Col xl={6}>
+      <VideoContainer style={{ padding: 30, marginBottom: 40 }}>
+        <YouTube videoId={props.id} opts={opts} onReady={onReady} />
       </VideoContainer>
     </Col>
   );
