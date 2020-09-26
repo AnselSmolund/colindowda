@@ -14,6 +14,7 @@ import { useWindowSize } from "../../util/hooks";
 import { HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
 import { motion } from "framer-motion";
 import ColImg2 from "../../assets/images/colin_transparent.png";
+import trippyimg from "../../assets/trippy6.svg";
 
 const MainImage = styled(Image)`
   position: absolute;
@@ -77,6 +78,7 @@ function About() {
 
   return (
     <>
+      {/* <MainImage src={trippyimg}></MainImage> */}
       <BigContainer></BigContainer>
       <MainContainer style={{ paddingBottom: 20 }}>
         {/* <Row>
@@ -94,7 +96,10 @@ function About() {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
               optio quos expedita ipsam quaerat est animi quam dolore corporis
               quibusdam? Commodi odio ea harum veritatis, beatae est voluptatum
-              quasi labore!
+              quasi labore! Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Vitae optio quos expedita ipsam quaerat est animi quam
+              dolore corporis quibusdam? Commodi odio ea harum veritatis, beatae
+              est voluptatum quasi labore!
             </MainText>
             <LinkGroup>
               <HiOutlineMail style={{ margin: 10, marginLeft: 0 }} />
@@ -107,8 +112,9 @@ function About() {
             </LinkGroup>
             <SocialNavGroup
               color={MainTheme.lightBlue}
-              size={30}
+              size={50}
               centered={isMobile}
+              marginleft={!isMobile && "-20px"}
             />
           </Col>
         </Row>
