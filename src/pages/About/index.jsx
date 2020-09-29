@@ -13,8 +13,9 @@ import {
 import { useWindowSize } from "../../util/hooks";
 import { HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
 import { motion } from "framer-motion";
-import ColImg2 from "../../assets/images/colin_transparent.png";
+import ColImg2 from "../../assets/images/colin_with_click.png";
 import trippyimg from "../../assets/trippy6.svg";
+import audioFile from "../../assets/sounds/Oh-no.mov";
 
 const MainImage = styled(Image)`
   position: absolute;
@@ -72,6 +73,11 @@ function About() {
   const size = useWindowSize();
   const [isMobile, setIsMobile] = useState(size.width < phoneWidthMax);
 
+  let audio = new Audio(audioFile);
+
+  function playAudio() {
+    audio.play();
+  }
   useEffect(() => {
     setIsMobile(size.width < 1200);
   }, [size]);
@@ -89,7 +95,11 @@ function About() {
 
         <Row className="justify-content-xl-center">
           <Col xl={6}>
-            <MainImg src={ColImg2} animate={{ scale: [0, 1.4, 1] }} />
+            <MainImg
+              src={ColImg2}
+              onClick={() => playAudio()}
+              animate={{ scale: [0, 1.4, 1] }}
+            />
           </Col>
           <Col xl={6}>
             <MainText>
