@@ -64,7 +64,11 @@ function NavComponent() {
       sticky="top"
       expand="md"
       className="main-nav"
-      style={navOpen ? { background: "white" } : { background: "transparent" }}
+      style={
+        navOpen || window.location.pathname != "/"
+          ? { background: "white" }
+          : { background: "transparent" }
+      }
     >
       <MainContainer>
         <Navbar.Brand href="/"> Colin Dowda </Navbar.Brand>

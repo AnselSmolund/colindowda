@@ -56,8 +56,7 @@ function Video() {
   if (youtubeIds.length <= 0) return null;
   return (
     <MainContainer>
-      <Title>Videos</Title>
-      <Row>
+      <Row style={{ marginTop: 20 }}>
         {youtubeIds.map(id => {
           return <SingleVideo id={id} />;
         })}

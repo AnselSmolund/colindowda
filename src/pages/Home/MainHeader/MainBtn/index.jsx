@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { MainTheme } from "../../../../styles/colors";
 import { motion } from "framer-motion";
+import { phoneOnly } from "../../../../util/breakpoints";
 
 const HireMeBtnContainer = styled(motion.button)`
   background-color: transparent;
@@ -23,6 +24,10 @@ const HireMeBtnContainer = styled(motion.button)`
     border: 2px solid ${MainTheme.lightBlue};
     outline: none;
   }
+  ${phoneOnly(`
+    font-size: 16px;
+    letter-spacing: 0.3em;
+  `)}
 `;
 
 const whileHoverStyle = {
