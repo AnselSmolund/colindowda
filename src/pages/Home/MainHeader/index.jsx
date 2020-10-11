@@ -99,9 +99,11 @@ function MainHeader(props) {
   const size = useWindowSize();
   const [videoOpen, toggleVideo] = useState(false);
   const [isMobile, setIsMobile] = useState(size.width < phoneWidthMax);
+  const [isDesktop, setIsDesktop] = useState(size.width > 1200);
 
   useEffect(() => {
-    setIsMobile(size.width < 1200);
+    setIsMobile(size.width < phoneWidthMax);
+    setIsDesktop(size.width > 1200);
   }, [size]);
 
   const aboutBtn = useRef(null);
@@ -190,7 +192,7 @@ function MainHeader(props) {
             transition={{ duration: 0.5 }}
           >
             <Row className="justify-content-md-center">
-              <Col md="auto" className="mt-5">
+              <Col md="auto" className={isMobile ? "mt-2" : "mt-5"}>
                 <MainBtn
                   btnText={"Watch Colin"}
                   clickFunction={() => {
@@ -205,7 +207,7 @@ function MainHeader(props) {
               </Col>
               <Col
                 md="auto"
-                className="mt-5"
+                className={isMobile ? "mt-3" : "mt-5"}
                 style={{ letterSpacing: "0.4em" }}
               >
                 <MainBtn
@@ -214,7 +216,7 @@ function MainHeader(props) {
                     window.location = "/contact";
                   }}
                 />
-                <WorkImg src={isMobile ? mobileWorkImg : workImg} />
+                <WorkImg src={!isDesktop ? mobileWorkImg : workImg} />
               </Col>
             </Row>
           </motion.div>
