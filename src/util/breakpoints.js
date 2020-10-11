@@ -8,7 +8,13 @@ export const phoneOnly = cssRulesStringBlock => `
 `;
 
 export const tabletAndPhoneOnly = cssRulesStringBlock => `
-    @media (max-width: ${1200}px ) {
+    @media (max-width: ${tabletWidthMax}px ) {
+        ${cssRulesStringBlock}
+    }
+`;
+
+export const tabletOnly = cssRulesStringBlock => `
+    @media (max-width: ${tabletWidthMax}px ) and (min-width: ${phoneWidthMax}px ) {
         ${cssRulesStringBlock}
     }
 `;

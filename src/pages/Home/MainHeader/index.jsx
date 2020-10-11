@@ -1,14 +1,18 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./style.css";
 import styled from "styled-components";
-import { phoneOnly } from "../../../util/breakpoints";
+import { phoneOnly, tabletOnly } from "../../../util/breakpoints";
 import { MainTheme } from "../../../styles/colors";
 import Container from "react-bootstrap/Container";
 import MainVideo from "../MainVideo";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import { useWindowSize } from "../../../util/hooks";
 import { motion } from "framer-motion";
 import MainBtn from "./MainBtn";
+import workImg from "../../../assets/images/work.png";
+import mobileWorkImg from "../../../assets/images/mobile-work3.png";
+import { phoneWidthMax } from "../../../util/breakpoints";
 
 const MainContainer = styled(Container)`
   text-align: center;
@@ -40,6 +44,22 @@ const Title = styled(motion.h1)`
    `)}
 `;
 
+const WorkImg = styled.img`
+  position: absolute;
+  height: 150px;
+  margin-top: 80px;
+  margin-left: -100px;
+  ${phoneOnly(`
+    height: 120px;
+    margin-left: -200px;
+    margin-top: 60px;
+`)}
+  ${tabletOnly(`
+height: 120px;
+margin-left: -250px;
+margin-top: 80px;
+`)}
+`;
 const SubTitle = styled(motion.h3)`
   font-size: 30px;
   color: ${MainTheme.cream};
@@ -76,7 +96,16 @@ margin-top:140px
 `;
 
 function MainHeader(props) {
+  const size = useWindowSize();
   const [videoOpen, toggleVideo] = useState(false);
+  const [isMobile, setIsMobile] = useState(size.width < phoneWidthMax);
+  const [isDesktop, setIsDesktop] = useState(size.width > 1200);
+
+  useEffect(() => {
+    setIsMobile(size.width < phoneWidthMax);
+    setIsDesktop(size.width > 1200);
+  }, [size]);
+
   const aboutBtn = useRef(null);
   const watchBtn = useRef(null);
   function fix() {
@@ -154,8 +183,7 @@ function MainHeader(props) {
                 animate={{ x: [400, 0] }}
                 transition={{ duration: 0.5 }}
               >
-                {" "}
-                Comedy Writer, Improviser, and Stand-Up{" "}
+                Comedian, Writer, Actor
               </SubTitle>
             </Col>
           </Row>
@@ -164,7 +192,7 @@ function MainHeader(props) {
             transition={{ duration: 0.5 }}
           >
             <Row className="justify-content-md-center">
-              <Col md="auto" className="mt-5">
+              <Col md="auto" className={isMobile ? "mt-2" : "mt-5"}>
                 <MainBtn
                   btnText={"Watch Colin"}
                   clickFunction={() => {
@@ -179,7 +207,7 @@ function MainHeader(props) {
               </Col>
               <Col
                 md="auto"
-                className="mt-5"
+                className={isMobile ? "mt-3" : "mt-5"}
                 style={{ letterSpacing: "0.4em" }}
               >
                 <MainBtn
@@ -188,6 +216,7 @@ function MainHeader(props) {
                     window.location = "/contact";
                   }}
                 />
+                <WorkImg src={!isDesktop ? mobileWorkImg : workImg} />
               </Col>
             </Row>
           </motion.div>
