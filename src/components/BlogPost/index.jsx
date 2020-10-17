@@ -4,6 +4,7 @@ import "./style.css";
 import firebase from "firebase";
 import Container from "react-bootstrap/Container";
 
+// blog post main container
 const MainContainer = styled.div`
   text-align: center;
   background: white;
