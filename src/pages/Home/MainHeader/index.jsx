@@ -106,20 +106,15 @@ function MainHeader(props) {
     setIsDesktop(size.width > 1200);
   }, [size]);
 
-  const aboutBtn = useRef(null);
+  const hireBtn = useRef(null);
   const watchBtn = useRef(null);
   function fix() {
-    var el = aboutBtn.current;
-    var el2 = watchBtn.current;
+    var el = hireBtn.current;
     var par = el.parentNode;
-    var par2 = el2.parentNode;
     var next = el.nextSibling;
-    var next2 = el2.nextSibling;
     par.removeChild(el);
-    par2.removeChild(el2);
     setTimeout(function() {
       par.insertBefore(el, next);
-      par2.insertBefore(el2, next2);
     }, 0);
   }
   return (
@@ -143,7 +138,6 @@ function MainHeader(props) {
                   clickFunction={() => {
                     window.location = "/about";
                   }}
-                  reference={aboutBtn}
                   btnText={"About Colin"}
                 />
               </AboutMeCol>
@@ -152,16 +146,16 @@ function MainHeader(props) {
                   clickFunction={() => {
                     window.location = "/videos";
                   }}
-                  reference={watchBtn}
                   btnText={"Watch More"}
                 />
               </HireMeCol>
               <HireMeCol md="auto" className="mt-5">
                 <MainBtn
                   clickFunction={() => {
-                    window.location = "/contact";
+                    window.location = "/services";
                   }}
-                  btnText={"Hire Colin"}
+                  reference={hireBtn}
+                  btnText={"Services"}
                 />
               </HireMeCol>
             </Row>
