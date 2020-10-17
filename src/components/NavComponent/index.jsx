@@ -54,6 +54,11 @@ export const screens = [
     title: "Contact",
     link: "/contact",
     color: "#ffaa00"
+  },
+  {
+    title: "Services",
+    link: "/services",
+    color: "#ffaa00"
   }
 ];
 

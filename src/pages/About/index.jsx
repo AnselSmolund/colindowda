@@ -48,7 +48,7 @@ const MainText = styled.p`
   background-color: white;
   ${phoneOnly(`
     padding-top: 0px;
-    text-align: center;
+
   `)}
 `;
 
@@ -66,7 +66,7 @@ const MainImg = styled(motion.img)`
 
 const ClickImg = styled.img`
   height: 100px;
-  position: absolute;
+  position: fixed;
   ${phoneOnly(`
     height:70px;
   `)}
@@ -123,13 +123,23 @@ function About() {
           </Col>
           <Col xl={6}>
             <MainText>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-              optio quos expedita ipsam quaerat est animi quam dolore corporis
-              quibusdam? Commodi odio ea harum veritatis, beatae est voluptatum
-              quasi labore! Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Vitae optio quos expedita ipsam quaerat est animi quam
-              dolore corporis quibusdam? Commodi odio ea harum veritatis, beatae
-              est voluptatum quasi labore!
+              <h4>
+                Hello and welcome! I’m
+                <strong style={{ color: MainTheme.orange }}>
+                  {" "}
+                  Colin Dowda
+                </strong>
+                , a comedian, writer, and actor based in{" "}
+                <strong style={{ color: MainTheme.orange }}>Chicago, IL</strong>
+                . Comedy is my religion, and I want to work with you!
+              </h4>
+              <br />
+              I’ve written for verified Twitter and Instagram accounts, edited
+              and punched-up scripts, written Best Man and Maid of Honor
+              speeches, and collaborated with filmmakers, comedians, writers,
+              photographers, web developers, actors, and more. Good writing will
+              help you stand out. <a href="/contact"> I can help. </a>
+              <br />
             </MainText>
             <LinkGroup>
               <HiOutlineMail style={{ margin: 10, marginLeft: 0 }} />

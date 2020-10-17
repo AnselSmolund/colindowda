@@ -8,6 +8,7 @@ import Blog from "./pages/Blog";
 import Admin from "./pages/Admin";
 import Contact from "./pages/Contact";
 import Video from "./pages/Video";
+import Services from "./pages/Services";
 import BlogPost from "./components/BlogPost";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import UserProvider from "./providers/UserProvider";
@@ -30,6 +31,7 @@ function App() {
             <Route exact path="/blog/:id" component={BlogPost} />
             <Route exact path="/admin" component={Admin} />
             <Route exact path="/contact" component={Contact} />
+            <Route exact path="/services" component={Services} />
           </Switch>
         </UserProvider>
       </Router>
