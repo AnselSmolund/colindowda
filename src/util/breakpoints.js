@@ -7,6 +7,12 @@ export const phoneOnly = cssRulesStringBlock => `
     }
 `;
 
+export const desktopOnly = cssRulesStringBlock => `
+    @media (min-width: ${tabletWidthMax}px ) {
+        ${cssRulesStringBlock}
+    }
+`;
+
 export const tabletAndPhoneOnly = cssRulesStringBlock => `
     @media (max-width: ${tabletWidthMax}px ) {
         ${cssRulesStringBlock}
