@@ -10,6 +10,7 @@
     "axios": "^0.20.0",
     "bootstrap": "^4.5.2",
     "cors": "^2.8.5",
+    "emailjs-com": "^2.6.3",
     "express": "^4.17.1",
     "firebase": "^7.19.1",
     "framer-motion": "^2.6.15",

@@ -4,7 +4,7 @@ import { MainTheme } from "../../../../styles/colors";
 import { motion } from "framer-motion";
 import { phoneOnly } from "../../../../util/breakpoints";
 
-const HireMeBtnContainer = styled(motion.button)`
+export const HireMeBtnContainer = styled(motion.button)`
   background-color: transparent;
   color: #fff;
   border: 2px solid ${MainTheme.cream};
