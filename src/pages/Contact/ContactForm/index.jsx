@@ -10,11 +10,38 @@ import axios from "axios";
 import Spinner from "react-bootstrap/Spinner";
 import emailSentImg from "../../../assets/images/emailSent.JPEG";
 import MainBtn from "../../Home/MainHeader/MainBtn";
+import { MainTheme } from "../../../styles/colors";
+import { phoneOnly } from "../../../util/breakpoints";
 
 const FormRow = styled(Row)`
   margin: 20px;
 `;
 
+export const SubmitFormBtn = styled(Button)`
+  background-color: ${MainTheme.lightBlue};
+  border-radius: 0%;
+  color: #fff;
+  border: 2px solid ${MainTheme.lightBlue};
+  text-decoration: none;
+  padding: 1em;
+  text-align: center;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.5em;
+  ${phoneOnly(`
+    font-size:14px;
+    `)}
+  &:hover {
+    background-color: ${MainTheme.cream};
+    color: ${MainTheme.lightBlue};
+    border: 2px solid ${MainTheme.cream};
+  }
+  &:focus {
+    outline: none;
+  }
+`;
 function ContactForm(props) {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -118,7 +145,9 @@ function ContactForm(props) {
         />
       </FormRow>
       <Row className="justify-content-center">
-        <Button type="submit">Submit form</Button>
+        <SubmitFormBtn type="submit" style={{ marginBottom: 10 }}>
+          Submit form
+        </SubmitFormBtn>
       </Row>
     </Form>
   );
