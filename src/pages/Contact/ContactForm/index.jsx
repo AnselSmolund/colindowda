@@ -113,7 +113,7 @@ function ContactForm(props) {
               Send Another
             </a>
           </p>
-          <Image src={emailSentImg}></Image>
+          <Image src={emailSentImg} fluid></Image>
         </Col>
       </Row>
     );
