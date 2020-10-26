@@ -140,6 +140,13 @@ function About() {
               photographers, web developers, actors, and more. Good writing will
               help you stand out. <a href="/contact"> I can help. </a>
               <br />
+              <br />
+              Right now, I’m working with some talented filmmakers and actors on
+              sketch comedy and short films. I train at{" "}
+              <a href="https://www.secondcity.com/">The Second City</a> and{" "}
+              <a href="https://www.actingstudiochicago.com/">
+                Acting Studio Chicago.{" "}
+              </a>
             </MainText>
             <LinkGroup>
               <HiOutlineMail style={{ margin: 10, marginLeft: 0 }} />

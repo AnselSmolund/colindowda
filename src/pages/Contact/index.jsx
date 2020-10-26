@@ -15,7 +15,7 @@ const LinkGroup = styled.p`
   padding-top: 10px;
   font-size: 16px;
   background-color: white;
-  text-align: center;
+
   ${desktopOnly(`
     text-transform: uppercase;
     font-size: 20px;
