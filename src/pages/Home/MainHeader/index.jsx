@@ -13,6 +13,7 @@ import MainBtn from "./MainBtn";
 import workImg from "../../../assets/images/work.png";
 import mobileWorkImg from "../../../assets/images/mobile-work3.png";
 import { phoneWidthMax } from "../../../util/breakpoints";
+import { TIKTOK_LINK } from "../../../util/constants";
 
 const MainContainer = styled(Container)`
   text-align: center;
@@ -144,7 +145,7 @@ function MainHeader(props) {
               <HireMeCol md="auto" className="mt-5">
                 <MainBtn
                   clickFunction={() => {
-                    window.location = "/videos";
+                    window.location = TIKTOK_LINK;
                   }}
                   btnText={"Watch More"}
                 />

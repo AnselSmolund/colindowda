@@ -45,11 +45,11 @@ export const screens = [
     link: "/blog",
     color: "#0099ff"
   },
-  {
-    title: "Videos",
-    link: "/videos",
-    color: "#22cc88"
-  },
+  //   {
+  //     title: "Videos",
+  //     link: "/videos",
+  //     color: "#22cc88"
+  //   },
   {
     title: "Contact",
     link: "/contact",

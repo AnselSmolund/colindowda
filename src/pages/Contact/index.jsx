@@ -61,8 +61,8 @@ function Contact() {
             <LinkText>
               <HiOutlineMail style={{ margin: 10, marginBottom: 15 }} />
               Email Me -{" "}
-              <LinkOut href="mailto:booking@colindowda.com">
-                booking@colindowda.com
+              <LinkOut href="mailto:colin@colindowda.com">
+                colin@colindowda.com
               </LinkOut>
             </LinkText>
             <SocialNavGroup

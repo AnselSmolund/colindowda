@@ -150,8 +150,8 @@ function About() {
             </MainText>
             <LinkGroup>
               <HiOutlineMail style={{ margin: 10, marginLeft: 0 }} />
-              <LinkOut href="mailto:anssmolund@gmail.com">
-                booking@colindowda.com
+              <LinkOut href="mailto:colin@colindowda.com">
+                colin@colindowda.com
               </LinkOut>
               <br />
               <HiOutlinePhone style={{ margin: 10, marginLeft: 0 }} />

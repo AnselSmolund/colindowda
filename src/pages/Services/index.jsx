@@ -11,7 +11,7 @@ import { MainTheme } from "../../styles/colors";
 import Image from "react-bootstrap/Image";
 import { MainContainer, Title } from "../../components/StyledComponents";
 import SingleService from "./SingleService";
-import testimg from "../../assets/images/emailSent.JPEG";
+import testimg from "../../assets/images/services-pic.JPEG";
 import weddingImg from "../../assets/icons/wedding-couple.png";
 import scriptImg from "../../assets/icons/script.png";
 import songImg from "../../assets/icons/songwriter.png";
@@ -73,16 +73,19 @@ function Services() {
   useEffect(() => {
     setIsMobile(size.width < phoneWidthMax);
   }, [size]);
+
   return (
     <MainContainer>
-      <Title> My Offerings </Title>
       <Container
         style={
-          !isMobile ? { paddingLeft: 30, paddingRight: 30 } : { padding: 0 }
+          !isMobile
+            ? { paddingLeft: 30, paddingRight: 30, paddingTop: 30 }
+            : { padding: 0 }
         }
       >
         <Row>
           <Col md={8}>
+            <h1 style={{ color: MainTheme.orange }}> Services </h1>
             <p>
               Whether I’m making films, performing stand-up, or perfecting my
               website, writing is always the essential foundation. Outside of my
@@ -97,7 +100,7 @@ function Services() {
               <br />
               <br />
             </p>
-            <h4 style={{ textAlign: "center" }}>
+            <h4>
               If you see something you like
               <a href="mailto:colindowda@gmail.com"> Email Me!</a>
             </h4>

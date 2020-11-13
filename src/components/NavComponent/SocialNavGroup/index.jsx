@@ -28,12 +28,12 @@ function SocialNavGroup(props) {
       <SocialNav link={TWITTER_LINK} color={color}>
         <FaTwitter style={{ fontSize: size }}></FaTwitter>
       </SocialNav>
-      <SocialNav link={YOUTUBE_LINK} color={color}>
+      {/* <SocialNav link={YOUTUBE_LINK} color={color}>
         <FaYoutube style={{ fontSize: size }}></FaYoutube>
       </SocialNav>
       <SocialNav link={FACEBOOK_LINK} color={color}>
         <FaFacebook style={{ fontSize: size }}></FaFacebook>
-      </SocialNav>
+      </SocialNav> */}
       <SocialNav link={TIKTOK_LINK} color={color}>
         <SiTiktok style={{ fontSize: size }}></SiTiktok>
       </SocialNav>
