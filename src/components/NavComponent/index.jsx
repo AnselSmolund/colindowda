@@ -38,28 +38,28 @@ export const screens = [
   {
     title: "About",
     link: "/about",
-    color: "#ff0055"
+    color: "#ff0055",
   },
   {
     title: "Blog",
     link: "/blog",
-    color: "#0099ff"
+    color: "#0099ff",
   },
-  {
-    title: "Videos",
-    link: "/videos",
-    color: "#22cc88"
-  },
+  //   {
+  //     title: "Videos",
+  //     link: "/videos",
+  //     color: "#22cc88"
+  //   },
   {
     title: "Contact",
     link: "/contact",
-    color: "#ffaa00"
+    color: "#ffaa00",
   },
-  {
-    title: "Services",
-    link: "/services",
-    color: "#ffaa00"
-  }
+  //   {
+  //     title: "Services",
+  //     link: "/services",
+  //     color: "#ffaa00"
+  //   }
 ];
 
 function NavComponent() {

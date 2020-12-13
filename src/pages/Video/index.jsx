@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { MainTheme } from "../../styles/colors";
 
 const api_key = "AIzaSyCeDNJrk3_A9kg5RkBjT1h-iKieZ1Tmmks";
-const channel_id = "UCX4OanYXxKVVMd-KvkIntNQ";
+const channel_id = "UCBJycsmduvYEL83R_U4JriQ";
 
 const HireMeBtnContainer = styled(motion.button)`
   background-color: ${MainTheme.lightBlue};

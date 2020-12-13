@@ -69,7 +69,7 @@ function ContactForm(props) {
       message
     };
 
-    const templateId = "template_d1an8dw";
+    const templateId = "template_2evi8bm";
     sendFeedback(templateId, {
       message: emailObject.message,
       from_name: emailObject.name,
@@ -78,7 +78,7 @@ function ContactForm(props) {
   };
   const sendFeedback = (templateId, variables) => {
     window.emailjs
-      .send("service_npa15s4", templateId, variables)
+      .send("service_58ik5eh", templateId, variables)
       .then(res => {
         console.log("Email successfully sent!");
         setEmailSent(true);
@@ -86,6 +86,7 @@ function ContactForm(props) {
       // Handle errors here however you like, or use a React error boundary
       .catch(err => {
         setEmailError(true);
+        setEmailSent(true);
         console.error(
           "Oh well, you failed. Here some thoughts on the error that occured:",
           err
