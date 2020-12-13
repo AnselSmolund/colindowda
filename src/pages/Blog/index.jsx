@@ -12,7 +12,7 @@ function Blog() {
 
   useEffect(() => {
     let ref = firebase.database().ref();
-    ref.once("value").then(snap => {
+    ref.once("value").then((snap) => {
       if (snap.val()) {
         setPosts(snap.val().blog);
       }
@@ -27,26 +27,29 @@ function Blog() {
         body: posts[key].body,
         timeStamp: posts[key].timeStamp,
         viewCount: posts[key].viewCount,
-        id: key
+        id: key,
       });
     }
   }
   useEffect(() => {
-    if (blogPosts.length > 0) {
+    if (blogPosts) {
       setLoading(false);
     }
   }, [blogPosts]);
 
   return (
-    <MainContainer style={loading ? { textAlign: "center" } : {}}>
-      <Title> Colin's Thoughts </Title>
+    <MainContainer
+      style={
+        loading ? { textAlign: "center", marginTop: 30 } : { marginTop: 30 }
+      }
+    >
       {loading ? (
         <Spinner animation="border" role="status" variant="warning" size="xl">
           <span className="sr-only">Loading...</span>
         </Spinner>
       ) : (
         <>
-          {blogPosts.reverse().map(post => (
+          {blogPosts.reverse().map((post) => (
             <BlogTile post={post} />
           ))}
         </>

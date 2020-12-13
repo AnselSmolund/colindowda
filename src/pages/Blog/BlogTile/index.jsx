@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
+import { MainTheme } from "../../../styles/colors";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
@@ -14,7 +15,7 @@ import { UserContext } from "../../../providers/UserProvider";
 import { phoneOnly } from "../../../util/breakpoints";
 
 const BlogTitle = styled.h1`
-  color: black;
+  color: ${MainTheme.orange};
   text-align: left;
   font-weight: bold;
   ${phoneOnly(`
@@ -169,13 +170,13 @@ function BlogTile(props) {
               plugins: [
                 "advlist autolink lists link image charmap print preview anchor",
                 "searchreplace visualblocks code fullscreen",
-                "insertdatetime media table paste code help wordcount"
+                "insertdatetime media table paste code help wordcount",
               ],
               toolbar:
                 "undo redo | fontselect formatselect | bold italic backcolor forecolor |\
        alignleft aligncenter alignright alignjustify | \
        bullist numlist outdent indent | removeformat | help",
-              toolbar_mode: "floating"
+              toolbar_mode: "floating",
             }}
             onEditorChange={handleEditorChange}
             value={post.body}

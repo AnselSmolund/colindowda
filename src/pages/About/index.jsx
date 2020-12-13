@@ -9,13 +9,13 @@ import {
   phoneOnly,
   phoneWidthMax,
   tabletAndPhoneOnly,
-  tabletOnly
+  tabletOnly,
 } from "../../util/breakpoints";
 import { useWindowSize } from "../../util/hooks";
 import { HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
 import { motion } from "framer-motion";
 import clickImg from "../../assets/images/click_me.png";
-import ColImg3 from "../../assets/images/colin_transparent.png";
+import ColImg3 from "../../assets/images/about_colin_transparent.png";
 import trippyimg from "../../assets/trippy6.svg";
 import audioFile from "../../assets/sounds/Oh-no.mov";
 
@@ -114,7 +114,7 @@ function About() {
 
         <Row className="justify-content-xl-center">
           <Col xl={6}>
-            <ClickImg src={clickImg} />
+            {/* <ClickImg src={clickImg} /> */}
             <MainImg
               src={ColImg3}
               onClick={() => playAudio()}
@@ -123,7 +123,7 @@ function About() {
           </Col>
           <Col xl={6}>
             <MainText>
-              <h4>
+              <h5>
                 Hello and welcome! I’m
                 <strong style={{ color: MainTheme.orange }}>
                   {" "}
@@ -132,7 +132,7 @@ function About() {
                 , a comedian, writer, and actor based in{" "}
                 <strong style={{ color: MainTheme.orange }}>Chicago, IL</strong>
                 . Comedy is my religion, and I want to work with you!
-              </h4>
+              </h5>
               <br />
               I’ve written for verified Twitter and Instagram accounts, edited
               and punched-up scripts, written Best Man and Maid of Honor

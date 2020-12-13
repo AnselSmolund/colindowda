@@ -13,7 +13,7 @@ import MainBtn from "./MainBtn";
 import workImg from "../../../assets/images/work.png";
 import mobileWorkImg from "../../../assets/images/mobile-work3.png";
 import { phoneWidthMax } from "../../../util/breakpoints";
-import { TIKTOK_LINK } from "../../../util/constants";
+import { INSTAGRAM_LINK } from "../../../util/constants";
 
 const MainContainer = styled(Container)`
   text-align: center;
@@ -114,7 +114,7 @@ function MainHeader(props) {
     var par = el.parentNode;
     var next = el.nextSibling;
     par.removeChild(el);
-    setTimeout(function() {
+    setTimeout(function () {
       par.insertBefore(el, next);
     }, 0);
   }
@@ -145,7 +145,7 @@ function MainHeader(props) {
               <HireMeCol md="auto" className="mt-5">
                 <MainBtn
                   clickFunction={() => {
-                    window.location = TIKTOK_LINK;
+                    window.location = INSTAGRAM_LINK;
                   }}
                   btnText={"Watch More"}
                 />
@@ -153,10 +153,10 @@ function MainHeader(props) {
               <HireMeCol md="auto" className="mt-5">
                 <MainBtn
                   clickFunction={() => {
-                    window.location = "/services";
+                    window.location = "/contact";
                   }}
                   reference={hireBtn}
-                  btnText={"Services"}
+                  btnText={"Contact"}
                 />
               </HireMeCol>
             </Row>
