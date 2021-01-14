@@ -122,15 +122,24 @@ function About() {
           </Col>
           <Col xl={6}>
             <MainText>
-              <h5>
-                <span style={{ color: MainTheme.orange }}>Colin Dowda </span> is
-                a 24-year-old comedian, writer, and actor in Chicago, IL. He
-                directed and starred in musicals throughout college at the
-                University of Wisconsin-Madison, then entered the world of
-                comedy through stand-up. He developed a unique style full of
-                music and props.
-              </h5>
-              <br />
+              <h2
+                style={{
+                  color: MainTheme.orange,
+                  textTransform: "uppercase",
+                  textAlign: "center",
+                  fontWeight: "bold",
+                }}
+              >
+                {" "}
+                About{" "}
+              </h2>
+              <p>
+                Colin Dowda is a 24-year-old comedian, writer, and actor in
+                Chicago, IL. He directed and starred in musicals throughout
+                college at the University of Wisconsin-Madison, then entered the
+                world of comedy through stand-up. He developed a unique style
+                full of music and props.
+              </p>
               Now, he trains at
               <a href="https://www.secondcity.com/">
                 {" "}
@@ -152,7 +161,7 @@ function About() {
               Samberg, and Jim Carrey. His favorite snacks are Pop Tarts and
               fresh brownies. He also likes to run, and is very bad at sports
               that require his hands. He is going to make some great movies one
-              day and he hopes he makes you smile. 😀
+              day and he hopes he makes you smile.
             </MainText>
             <LinkGroup>
               <HiOutlineMail style={{ margin: 10, marginLeft: 0 }} />
