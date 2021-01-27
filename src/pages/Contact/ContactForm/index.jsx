@@ -8,7 +8,7 @@ import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 import Spinner from "react-bootstrap/Spinner";
-import emailSentImg from "../../../assets/images/emailSent.JPEG";
+import emailSentImg from "../../../assets/images/colin_email.jpg";
 import MainBtn from "../../Home/MainHeader/MainBtn";
 import { MainTheme } from "../../../styles/colors";
 import { phoneOnly } from "../../../util/breakpoints";
@@ -49,42 +49,42 @@ function ContactForm(props) {
   const [emailSent, setEmailSent] = useState(false);
   const [emailError, setEmailError] = useState(false);
 
-  const handleEmailChange = event => {
+  const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
 
-  const handleNameChange = event => {
+  const handleNameChange = (event) => {
     setName(event.target.value);
   };
 
-  const handleMessageChange = event => {
+  const handleMessageChange = (event) => {
     setMessage(event.target.value);
   };
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
 
     const emailObject = {
       email,
       name,
-      message
+      message,
     };
 
     const templateId = "template_2evi8bm";
     sendFeedback(templateId, {
       message: emailObject.message,
       from_name: emailObject.name,
-      reply_to: emailObject.email
+      reply_to: emailObject.email,
     });
   };
   const sendFeedback = (templateId, variables) => {
     window.emailjs
       .send("service_58ik5eh", templateId, variables)
-      .then(res => {
+      .then((res) => {
         console.log("Email successfully sent!");
         setEmailSent(true);
       })
       // Handle errors here however you like, or use a React error boundary
-      .catch(err => {
+      .catch((err) => {
         setEmailError(true);
         setEmailSent(true);
         console.error(

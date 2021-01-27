@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { MainContainer, Title } from "../../components/StyledComponents";
 import { Col, Row, Container, Image } from "react-bootstrap";
-import ColImg from "../../assets/images/colinImg.jpg";
+import ColImg from "../../assets/images/colin_about_page.jpg";
 import SocialNavGroup from "../../components/NavComponent/SocialNavGroup";
 import { MainTheme } from "../../styles/colors";
 import {
+  desktopOnly,
   phoneOnly,
   phoneWidthMax,
   tabletAndPhoneOnly,
@@ -15,7 +16,7 @@ import { useWindowSize } from "../../util/hooks";
 import { HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
 import { motion } from "framer-motion";
 import { INSTAGRAM_LINK, TIKTOK_LINK } from "../../util/constants";
-import ColImg3 from "../../assets/images/about_colin_transparent.png";
+import ColImg3 from "../../assets/images/colin_about_page.jpg";
 import audioFile from "../../assets/sounds/Oh-no.mov";
 
 const MainImage = styled(Image)`
@@ -42,7 +43,6 @@ const MainText = styled.p`
   margin: 0;
   color: black;
   font-size: 1em;
-  padding-top: 50px;
   z-index: -1;
   background-color: white;
   ${phoneOnly(`
@@ -52,13 +52,17 @@ const MainText = styled.p`
 `;
 
 const MainImg = styled(motion.img)`
-  max-height: 700px;
+  max-height: 500px;
   position: fixed;
   margin: auto;
   margin-bottom: 0px;
   display: block;
+  ${desktopOnly(`
+        margin-top: 50px;
+        margin-left: 50px;
+  `)}
   ${tabletAndPhoneOnly(`
-  position: relative;
+        position: relative;
         height: 300px;
     `)}
 `;
@@ -130,15 +134,14 @@ function About() {
                   fontWeight: "bold",
                 }}
               >
-                {" "}
-                About{" "}
+                About
               </h2>
               <p>
-                Colin Dowda is a 24-year-old comedian, writer, and actor in
-                Chicago, IL. He directed and starred in musicals throughout
-                college at the University of Wisconsin-Madison, then entered the
-                world of comedy through stand-up. He developed a unique style
-                full of music and props.
+                Colin Dowda is a 24-year-old actor, writer, and comedian in
+                Chicago, IL. He wrote, directed, and starred in musicals
+                throughout college at the University of Wisconsin-Madison, then
+                entered the world of comedy through stand-up. He developed a
+                unique style full of music and props.
               </p>
               Now, he trains at
               <a href="https://www.secondcity.com/">
@@ -155,13 +158,13 @@ function About() {
               <a href={TIKTOK_LINK}>TikTok</a>.
               <br />
               <br />
-              He’s obsessed with reading, movies, music, and silliness. Some of
+              He’s obsessed with books, movies, music, and silliness. Some of
               his heroes are Judd Apatow, Seth Rogen, Kid Cudi, Conan O’Brien,
               Miley Cyrus, Cecily Strong, Maya Rudolph, Bill Hader, Andy
               Samberg, and Jim Carrey. His favorite snacks are Pop Tarts and
-              fresh brownies. He also likes to run, and is very bad at sports
-              that require his hands. He is going to make some great movies one
-              day and he hopes he makes you smile.
+              fresh brownies, he likes to run, and he’s very bad at sports that
+              require his hands. He is going to make some great movies one day
+              and he hopes he makes you smile.
             </MainText>
             <LinkGroup>
               <HiOutlineMail style={{ margin: 10, marginLeft: 0 }} />

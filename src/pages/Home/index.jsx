@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import ColImg2 from "../../assets/images/colin_headshot_2.jpeg";
+import ColImg2 from "../../assets/images/colin_headshot_2.JPG";
 import styled from "styled-components";
 import { phoneOnly } from "../../util/breakpoints";
 import Image from "react-bootstrap/Image";

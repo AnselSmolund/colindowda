@@ -178,7 +178,7 @@ function MainHeader(props) {
                 animate={{ x: [400, 0] }}
                 transition={{ duration: 0.5 }}
               >
-                Comedian, Writer, Actor
+                Actor, Writer, Comedian
               </SubTitle>
             </Col>
           </Row>
