@@ -15,7 +15,7 @@ function SocialNav(props) {
   const { link, color } = props;
   return (
     <motion.div animate={{ scale: [0, 1] }} transition={{ duration: 0.5 }}>
-      <NavLink href={link} style={{ color: color }}>
+      <NavLink href={link} target="_blank" style={{ color: color }}>
         {props.children}
       </NavLink>
     </motion.div>

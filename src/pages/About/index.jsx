@@ -14,9 +14,8 @@ import {
 import { useWindowSize } from "../../util/hooks";
 import { HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
 import { motion } from "framer-motion";
-import clickImg from "../../assets/images/click_me.png";
+import { INSTAGRAM_LINK, TIKTOK_LINK } from "../../util/constants";
 import ColImg3 from "../../assets/images/about_colin_transparent.png";
-import trippyimg from "../../assets/trippy6.svg";
 import audioFile from "../../assets/sounds/Oh-no.mov";
 
 const MainImage = styled(Image)`
@@ -123,30 +122,46 @@ function About() {
           </Col>
           <Col xl={6}>
             <MainText>
-              <h5>
-                Hello and welcome! I’m
-                <strong style={{ color: MainTheme.orange }}>
-                  {" "}
-                  Colin Dowda
-                </strong>
-                , a comedian, writer, and actor based in{" "}
-                <strong style={{ color: MainTheme.orange }}>Chicago, IL</strong>
-                . Comedy is my religion, and I want to work with you!
-              </h5>
-              <br />
-              I’ve written for verified Twitter and Instagram accounts, edited
-              and punched-up scripts, written Best Man and Maid of Honor
-              speeches, and collaborated with filmmakers, comedians, writers,
-              photographers, web developers, actors, and more. Good writing will
-              help you stand out. <a href="/contact"> I can help. </a>
-              <br />
-              <br />
-              Right now, I’m working with some talented filmmakers and actors on
-              sketch comedy and short films. I train at{" "}
-              <a href="https://www.secondcity.com/">The Second City</a> and{" "}
+              <h2
+                style={{
+                  color: MainTheme.orange,
+                  textTransform: "uppercase",
+                  textAlign: "center",
+                  fontWeight: "bold",
+                }}
+              >
+                {" "}
+                About{" "}
+              </h2>
+              <p>
+                Colin Dowda is a 24-year-old comedian, writer, and actor in
+                Chicago, IL. He directed and starred in musicals throughout
+                college at the University of Wisconsin-Madison, then entered the
+                world of comedy through stand-up. He developed a unique style
+                full of music and props.
+              </p>
+              Now, he trains at
+              <a href="https://www.secondcity.com/">
+                {" "}
+                The Second City
+              </a> and{" "}
               <a href="https://www.actingstudiochicago.com/">
-                Acting Studio Chicago.{" "}
+                Acting Studio Chicago{" "}
               </a>
+              in both comedy and drama. He’s written his first feature film, and
+              is working on a short film to be shot in Summer of 2021. He also
+              makes dumb stuff, which you can find on{" "}
+              <a href={INSTAGRAM_LINK}>Instagram</a>, or{" "}
+              <a href={TIKTOK_LINK}>TikTok</a>.
+              <br />
+              <br />
+              He’s obsessed with reading, movies, music, and silliness. Some of
+              his heroes are Judd Apatow, Seth Rogen, Kid Cudi, Conan O’Brien,
+              Miley Cyrus, Cecily Strong, Maya Rudolph, Bill Hader, Andy
+              Samberg, and Jim Carrey. His favorite snacks are Pop Tarts and
+              fresh brownies. He also likes to run, and is very bad at sports
+              that require his hands. He is going to make some great movies one
+              day and he hopes he makes you smile.
             </MainText>
             <LinkGroup>
               <HiOutlineMail style={{ margin: 10, marginLeft: 0 }} />
@@ -155,7 +170,7 @@ function About() {
               </LinkOut>
               <br />
               <HiOutlinePhone style={{ margin: 10, marginLeft: 0 }} />
-              <LinkOut href="tel:5554280940">555-428-0940</LinkOut>
+              <LinkOut href="tel:9524289377">952-428-9377</LinkOut>
             </LinkGroup>
             <SocialNavGroup
               color={MainTheme.lightBlue}
