@@ -13,8 +13,9 @@ import { FaTrash, FaPencilAlt } from "react-icons/fa";
 import { Editor } from "@tinymce/tinymce-react";
 import { UserContext } from "../../../providers/UserProvider";
 import { phoneOnly } from "../../../util/breakpoints";
+import { motion } from "framer-motion";
 
-const BlogTitle = styled.h1`
+const BlogTitle = styled.h2`
   color: ${MainTheme.orange};
   text-align: left;
   font-weight: bold;
@@ -108,45 +109,47 @@ function BlogTile(props) {
   if (!editPost) {
     return (
       <MobileContainer>
-        <Row className="justify-content-left">
-          <Col xs="auto">
-            <Link to={`/blog/${post.id}`}>
-              <BlogTitle>{post.title}</BlogTitle>
-            </Link>
-          </Col>
-          {user && (
-            <Col xs="auto" style={{ marginTop: 15 }}>
-              <TrashIcon
-                onClick={() => throwPostAway(post.id)}
-                style={{ marginLeft: 10 }}
-              />
-              <PencilIcon
-                onClick={() => toggleEdit(true)}
-                style={{ marginLeft: 10 }}
-              />
+        <motion.div
+          animate={{
+            opacity: [0.1, 1],
+          }}
+          transition={{ duration: 0.5 }}
+        >
+          <Row className="justify-content-left">
+            <Col xs="auto">
+              <Link to={`/blog/${post.id}`}>
+                <BlogTitle>{post.title}</BlogTitle>
+              </Link>
             </Col>
-          )}
-        </Row>
-        <Row>
-          <Col xs="auto">
-            <p>
-              <strong>{post.timeStamp}</strong>
-            </p>
-          </Col>
-          <Col xs="auto">
-            <p>
-              <strong>Views:</strong> {post.viewCount}
-            </p>
-          </Col>
-        </Row>
-        <Row>
-          <Col md="auto">
-            <MainTile
-              dangerouslySetInnerHTML={{ __html: post.body }}
-            ></MainTile>
-          </Col>
-        </Row>
-        <hr />
+            {user && (
+              <Col xs="auto" style={{ marginTop: 15 }}>
+                <TrashIcon
+                  onClick={() => throwPostAway(post.id)}
+                  style={{ marginLeft: 10 }}
+                />
+                <PencilIcon
+                  onClick={() => toggleEdit(true)}
+                  style={{ marginLeft: 10 }}
+                />
+              </Col>
+            )}
+          </Row>
+          <Row>
+            <Col xs="auto">
+              <p>
+                <strong>{post.timeStamp}</strong>
+              </p>
+            </Col>
+          </Row>
+          <Row>
+            <Col md="auto">
+              <MainTile
+                dangerouslySetInnerHTML={{ __html: post.body }}
+              ></MainTile>
+            </Col>
+          </Row>
+          <hr />
+        </motion.div>
       </MobileContainer>
     );
   } else {
