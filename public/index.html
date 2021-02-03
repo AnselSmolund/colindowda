@@ -21,7 +21,7 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Colin Dowda - Comedian, Writer, Visionary"
+      content="Colin Dowda - Chicago Comedian, Writer, Actor"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
@@ -30,7 +30,7 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Dosis&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
 
@@ -58,5 +58,37 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCeDNJrk3_A9kg5RkBjT1h-iKieZ1Tmmks",
+        authDomain: "colindowda-8a616.firebaseapp.com",
+        databaseURL: "https://colindowda-8a616.firebaseio.com",
+        projectId: "colindowda-8a616",
+        storageBucket: "colindowda-8a616.appspot.com",
+        messagingSenderId: "1014027148420",
+        appId: "1:1014027148420:web:cf8348923d088b9c9536d1",
+        measurementId: "G-K728KJFEV6",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("user_J9Y3vcCFFZbWMprK66lpJ"); // Obtain your user ID at the dashboard https://dashboard.emailjs.com/integration
+      })();
+    </script>
   </body>
 </html>

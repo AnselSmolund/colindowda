@@ -1,53 +1,38 @@
 import React from "react";
 import "./App.css";
-import ColImg from "./colinImg.jpg";
 import styled from "styled-components";
-import { phoneOnly } from "./util/breakpoints";
+import NavComponent from "./components/NavComponent";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import Blog from "./pages/Blog";
+import Admin from "./pages/Admin";
+import Contact from "./pages/Contact";
+import Services from "./pages/Services";
+import BlogPost from "./components/BlogPost";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import UserProvider from "./providers/UserProvider";
 
 const MainContainer = styled.div`
-  text-align: center;
-  font-family: "Dosis", sans-serif;
-  background: #fca311;
-  padding-top: 50px;
-`;
-const Title = styled.h1`
-  text-align: center;
-  margin-top: 0px;
-  font-weight: 900;
-  color: white;
-  font-size: 70px;
-  ${phoneOnly(`
-    font-size: 40px;
-   `)}
-`;
-
-const SubTitle = styled.h3`
-  font-size: 25px;
-`;
-
-const AppHeader = styled.header`
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const MainImage = styled.img`
-  height: 60vmin;
-  pointer-events: none;
-  ${phoneOnly(`
-    height: 100vmin;
-  `)}
+  font-family: "Montserrat", sans-serif;
 `;
 
 function App() {
   return (
     <MainContainer>
-      <Title>Colin Dowda </Title>
-      <AppHeader>
-        <MainImage src={ColImg} alt="logo" />
-        <SubTitle>(Website Coming Soon)</SubTitle>
-      </AppHeader>
+      <NavComponent />
+      <Router>
+        <UserProvider>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route exact path="/blog" component={Blog} />
+            <Route exact path="/blog/:id" component={BlogPost} />
+            <Route exact path="/admin" component={Admin} />
+            <Route exact path="/contact" component={Contact} />
+            <Route exact path="/services" component={Services} />
+          </Switch>
+        </UserProvider>
+      </Router>
     </MainContainer>
   );
 }
