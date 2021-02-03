@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { MainContainer, Title } from "../../components/StyledComponents";
-import { Col, Row, Container, Image } from "react-bootstrap";
-import ColImg from "../../assets/images/colin_about_page.jpg";
+import { MainContainer } from "../../components/StyledComponents";
+import { Col, Row } from "react-bootstrap";
 import SocialNavGroup from "../../components/NavComponent/SocialNavGroup";
 import { MainTheme } from "../../styles/colors";
 import {
@@ -10,7 +9,6 @@ import {
   phoneOnly,
   phoneWidthMax,
   tabletAndPhoneOnly,
-  tabletOnly,
 } from "../../util/breakpoints";
 import { useWindowSize } from "../../util/hooks";
 import { HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
@@ -19,15 +17,6 @@ import { INSTAGRAM_LINK, TIKTOK_LINK } from "../../util/constants";
 import ColImg3 from "../../assets/images/colin_about_page.jpg";
 import audioFile from "../../assets/sounds/Oh-no.mov";
 
-const MainImage = styled(Image)`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-`;
 const BigContainer = styled.div`
   position: fixed;
   top: 0;
@@ -65,17 +54,6 @@ const MainImg = styled(motion.img)`
         position: relative;
         height: 300px;
     `)}
-`;
-
-const ClickImg = styled.img`
-  height: 100px;
-  position: fixed;
-  ${phoneOnly(`
-    height:70px;
-  `)}
-  ${tabletOnly(`
-    margin-left: 100px;
-  `)}
 `;
 
 const LinkGroup = styled.p`
@@ -117,7 +95,6 @@ function About() {
 
         <Row className="justify-content-xl-center">
           <Col xl={6}>
-            {/* <ClickImg src={clickImg} /> */}
             <MainImg
               src={ColImg3}
               onClick={() => playAudio()}
@@ -172,8 +149,6 @@ function About() {
                 colin@colindowda.com
               </LinkOut>
               <br />
-              <HiOutlinePhone style={{ margin: 10, marginLeft: 0 }} />
-              <LinkOut href="tel:9524289377">952-428-9377</LinkOut>
             </LinkGroup>
             <SocialNavGroup
               color={MainTheme.lightBlue}

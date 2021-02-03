@@ -1,8 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Player, BigPlayButton, ControlBar, PlayToggle } from "video-react";
-import MainVid from "../../../assets/ShortVideo.mov";
-import ImgThumbnail from "../../../assets/images/videoThumbnail.png";
 import { phoneOnly, tabletOnly } from "../../../util/breakpoints";
 
 const VideoContainer = styled.div`

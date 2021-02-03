@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Form from "react-bootstrap/Form";
-import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
-import axios from "axios";
-import Spinner from "react-bootstrap/Spinner";
 import emailSentImg from "../../../assets/images/colin_email.jpg";
-import MainBtn from "../../Home/MainHeader/MainBtn";
 import { MainTheme } from "../../../styles/colors";
 import { phoneOnly } from "../../../util/breakpoints";
 

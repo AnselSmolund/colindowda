@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./style.css";
 import styled from "styled-components";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import { motion, AnimateSharedLayout } from "framer-motion";
-import { FaInstagram, FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
 import { HiMenu, HiX } from "react-icons/hi";
 import { phoneOnly } from "../../util/breakpoints";
-import SocialNav from "./SocialNav";
 import SocialNavGroup from "./SocialNavGroup";
 import NavLink from "./NavLink";
 
@@ -45,21 +42,11 @@ export const screens = [
     link: "/blog",
     color: "#0099ff",
   },
-  //   {
-  //     title: "Videos",
-  //     link: "/videos",
-  //     color: "#22cc88"
-  //   },
   {
     title: "Contact",
     link: "/contact",
     color: "#ffaa00",
   },
-  //   {
-  //     title: "Services",
-  //     link: "/services",
-  //     color: "#ffaa00"
-  //   }
 ];
 
 function NavComponent() {

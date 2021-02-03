@@ -108,7 +108,6 @@ function MainHeader(props) {
   }, [size]);
 
   const hireBtn = useRef(null);
-  const watchBtn = useRef(null);
   function fix() {
     var el = hireBtn.current;
     var par = el.parentNode;

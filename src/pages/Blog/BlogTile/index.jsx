@@ -6,7 +6,6 @@ import { MainTheme } from "../../../styles/colors";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
 import firebase from "firebase";
 import Form from "react-bootstrap/Form";
 import { FaTrash, FaPencilAlt } from "react-icons/fa";
