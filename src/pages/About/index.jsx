@@ -15,7 +15,6 @@ import { HiOutlineMail } from "react-icons/hi";
 import { motion } from "framer-motion";
 import { INSTAGRAM_LINK, TIKTOK_LINK } from "../../util/constants";
 import ColImg3 from "../../assets/images/colin_about_page.jpg";
-import audioFile from "../../assets/sounds/Oh-no.mov";
 
 const BigContainer = styled.div`
   position: fixed;
