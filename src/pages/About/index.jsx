@@ -85,7 +85,6 @@ function About() {
           <Col xl={6}>
             <MainImg
               src={ColImg3}
-              onClick={() => playAudio()}
               animate={isMobile ? { y: [240, 0] } : { y: [400, 0] }}
             />
           </Col>

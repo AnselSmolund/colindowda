@@ -53,6 +53,9 @@ function Contact() {
             <LinkOut href="mailto:colin@colindowda.com">
               colin@colindowda.com
             </LinkOut>
+            <br />
+            <AiOutlineForm style={{ margin: 10, marginBottom: 15 }} />
+            Or fill out the form:
           </LinkText>
         </Col>
       </Row>
