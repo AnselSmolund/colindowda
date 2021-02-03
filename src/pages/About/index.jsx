@@ -11,7 +11,7 @@ import {
   tabletAndPhoneOnly,
 } from "../../util/breakpoints";
 import { useWindowSize } from "../../util/hooks";
-import { HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
+import { HiOutlineMail } from "react-icons/hi";
 import { motion } from "framer-motion";
 import { INSTAGRAM_LINK, TIKTOK_LINK } from "../../util/constants";
 import ColImg3 from "../../assets/images/colin_about_page.jpg";
@@ -73,26 +73,14 @@ function About() {
   const size = useWindowSize();
   const [isMobile, setIsMobile] = useState(size.width < phoneWidthMax);
 
-  let audio = new Audio(audioFile);
-
-  function playAudio() {
-    audio.play();
-  }
   useEffect(() => {
     setIsMobile(size.width < 1200);
   }, [size]);
 
   return (
     <>
-      {/* <MainImage src={trippyimg}></MainImage> */}
       <BigContainer></BigContainer>
       <MainContainer style={{ paddingBottom: 20 }}>
-        {/* <Row>
-          <Col>
-            <Title>About Colin</Title>
-          </Col>
-        </Row> */}
-
         <Row className="justify-content-xl-center">
           <Col xl={6}>
             <MainImg
