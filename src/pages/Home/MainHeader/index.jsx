@@ -144,7 +144,7 @@ function MainHeader(props) {
               <HireMeCol md="auto" className="mt-5">
                 <MainBtn
                   clickFunction={() => {
-                    window.open(INSTAGRAM_LINK, "_blank");
+                    window.location = "/videos";
                   }}
                   btnText={"Watch More"}
                 />
