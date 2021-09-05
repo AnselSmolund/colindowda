@@ -43,6 +43,11 @@ export const screens = [
     color: "#0099ff",
   },
   {
+    title: "Videos",
+    link: "/videos",
+    color: "#ffaa00",
+  },
+  {
     title: "Contact",
     link: "/contact",
     color: "#ffaa00",

@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { MainTheme } from "../../../styles/colors";
 
 function onMainPage() {
-  console.log(window.location.pathname == "/");
   return window.location.pathname == "/";
 }
 const Link = styled(Nav.Link)`

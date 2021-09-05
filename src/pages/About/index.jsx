@@ -13,7 +13,11 @@ import {
 import { useWindowSize } from "../../util/hooks";
 import { HiOutlineMail } from "react-icons/hi";
 import { motion } from "framer-motion";
-import { INSTAGRAM_LINK, TIKTOK_LINK } from "../../util/constants";
+import {
+  INSTAGRAM_LINK,
+  TIKTOK_LINK,
+  YOUTUBE_LINK,
+} from "../../util/constants";
 import ColImg3 from "../../assets/images/colin_about_page.jpg";
 
 const BigContainer = styled.div`
@@ -100,34 +104,29 @@ function About() {
                 About
               </h2>
               <p>
-                Colin Dowda is a 24-year-old actor, writer, and comedian in
+                Colin Dowda is a 24-year-old actor, writer, and director in
                 Chicago, IL. He wrote, directed, and starred in musicals
                 throughout college at the University of Wisconsin-Madison, then
-                entered the world of comedy through stand-up. He developed a
-                unique style full of music and props.
+                entered the world of comedy through stand-up.
               </p>
               Now, he trains at
-              <a href="https://www.secondcity.com/">
-                {" "}
-                The Second City
-              </a> and{" "}
-              <a href="https://www.actingstudiochicago.com/">
-                Acting Studio Chicago{" "}
-              </a>
-              in both comedy and drama. He’s written his first feature film, and
-              is working on a short film to be shot in Summer of 2021. He also
-              makes dumb stuff, which you can find on{" "}
+              <a href="https://www.secondcity.com/"> The Second City's</a> Grad
+              Revue program and improvises all around Chicago. His first short
+              film (written, directed by, and starring Colin) was shot Spring
+              2021 and is set to enter the festival circuit by the end of the
+              year. He also makes zero budget comedy shorts and other dumb
+              stuff, which you can find on{" "}
               <a href={INSTAGRAM_LINK}>Instagram</a>, or{" "}
-              <a href={TIKTOK_LINK}>TikTok</a>.
+              <a href={YOUTUBE_LINK}>Youtube</a>.
               <br />
               <br />
               He’s obsessed with books, movies, music, and silliness. Some of
-              his heroes are Judd Apatow, Seth Rogen, Kid Cudi, Conan O’Brien,
-              Miley Cyrus, Cecily Strong, Maya Rudolph, Bill Hader, Andy
-              Samberg, and Jim Carrey. His favorite snacks are Pop Tarts and
-              fresh brownies, he likes to run, and he’s very bad at sports that
-              require his hands. He is going to make some great movies one day
-              and he hopes he makes you smile.
+              his heroes are Bo Burnham, Judd Apatow, Seth Rogen, Kid Cudi,
+              Conan O’Brien, Miley Cyrus, Cecily Strong, Wes Anderson, Edgar
+              Wright, Maya Rudolph, Bill Hader, Amy Schumer, Andy Samberg, and
+              Jim Carrey. He likes to run, he’s very bad at sports that require
+              his hands, and he f**king loves lists. He is going to make some
+              great movies one day and he hopes he makes you smile.
             </MainText>
             <LinkGroup>
               <HiOutlineMail style={{ margin: 10, marginLeft: 0 }} />

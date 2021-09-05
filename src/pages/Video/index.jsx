@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { MainTheme } from "../../styles/colors";
 
 const api_key = "AIzaSyCeDNJrk3_A9kg5RkBjT1h-iKieZ1Tmmks";
-const channel_id = "UCBJycsmduvYEL83R_U4JriQ";
+const channel_id = "UCUNhhqlKuR3Bu6ju4oLlcUA";
 
 const HireMeBtnContainer = styled(motion.button)`
   background-color: ${MainTheme.lightBlue};
@@ -39,16 +39,16 @@ function Video() {
     const url = `https://www.googleapis.com/youtube/v3/search?key=${api_key}&channelId=${channel_id}&part=snippet,id&order=date&maxResults=${maxResults}`;
 
     fetch(url)
-      .then(res => res.json())
+      .then((res) => res.json())
       .then(
-        result => {
+        (result) => {
           let youtubeIds = [];
-          result.items.map(item => {
+          result.items.map((item) => {
             youtubeIds.push(item.id.videoId);
           });
           setYouTubeIds(youtubeIds);
         },
-        error => {
+        (error) => {
           console.log(error);
         }
       );
@@ -57,7 +57,7 @@ function Video() {
   return (
     <MainContainer>
       <Row style={{ marginTop: 20 }}>
-        {youtubeIds.map(id => {
+        {youtubeIds.map((id) => {
           return <SingleVideo id={id} />;
         })}
       </Row>
